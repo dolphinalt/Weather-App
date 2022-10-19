@@ -1,0 +1,144 @@
+/* 
+setup
+*/
+body {
+    padding: 0;
+    margin: 0;
+    background-image: url("./assets/Washington,DC,USA.png");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 101%;
+}
+@font-face {
+    font-family: GlacialIndifferenceBold;
+    src: url("./assets/glacial-indifference/GlacialIndifference-Bold.otf") format("opentype");
+}
+@font-face {
+    font-family: GlacialIndifferenceItalic;
+    src: url("./assets/glacial-indifference/GlacialIndifference-Italic.otf") format("opentype");
+}
+@font-face {
+    font-family: GlacialIndifferenceRegular;
+    src: url("./assets/glacial-indifference/GlacialIndifference-Regular.otf") format("opentype");
+}
+/* 
+Baseline
+*/
+.regular {
+    font-family: "GlacialIndifferenceRegular", sans-serif;
+}
+/* 
+Navbar
+*/
+.nav {
+    height: 110px;
+    width: 100vw;
+    /* Width:401, height: 494 */
+    background-color: rgb(84, 84, 84,0.75);
+    border-radius: 20px;
+    margin-bottom: 30px;
+    float: left;
+    margin-right: 20px;
+    position: absolute;
+    top: -50px;
+    font-family: "GlacialIndifferenceRegular", sans-serif;
+    font-size: 19px;
+    color: rgb(167, 167, 167);
+}
+.nav input[type=text] {
+    font-family: "GlacialIndifferenceRegular", sans-serif;
+    border: none;
+    outline: none;
+    height: 35px;
+    width: 335px;
+    font-size: 19px;
+    color: rgb(84, 84, 84);
+    background-color: transparent;
+    position: absolute;
+    top: 60px;
+    left: 33px;
+}
+::placeholder {
+    font-family: "GlacialIndifferenceRegular", sans-serif;
+    color: rgb(167, 167, 167);
+}
+.nav b {
+    height: 37px;
+    width: 375px;
+    background-color: rgb(255, 255, 255, 0.75);
+    border-radius: 51px;
+    position: absolute;
+    top: 60px;
+    left: 15px;
+}
+.nav button {
+    font-family: "GlacialIndifferenceRegular", sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    height: 37px;
+    width: 125px;
+    background-color: rgb(166, 166, 166, 0.75);
+    border-radius: 51px;
+    border: none;
+    outline: none;
+}
+/* 
+Today's info
+*/
+.location {
+    font-family: "GlacialIndifferenceBold", sans-serif;
+    font-size: 131px;
+    text-align: center;
+    caret-color: rgb(255, 255, 255);
+	-webkit-text-stroke: 6px rgb(255, 255, 255, 0.6);
+	-webkit-text-fill-color: transparent;
+    position: relative;
+    top: 92px;
+    /* 186px */
+}
+.temperature {
+    font-family: "GlacialIndifferenceBold", sans-serif;
+    font-size: 131px;
+    color: white;
+    position: absolute;
+    top: 117px;
+    /* top: -45px; */
+    left: 653px;
+    /* left: 896px; */
+    /* 896px */
+    text-shadow: rgba(0, 0, 0, 0.4) 0px 7.2px 30.6px;
+}
+.info {
+    font-family: "GlacialIndifferenceBold", sans-serif;
+    font-size: 29.2px;
+    color: white;
+    text-align: center;
+    position: relative;
+    top: 98px;
+    /* 802px */
+    text-shadow: rgba(0, 0, 0, 0.4) 0px 7.2px 30.6px;
+}
+/* 
+Multiple day rotatable display
+*/
+.tile {
+    height: 400px;
+    width: 300px;
+    /* Width:401, height: 494 */
+    background-color: rgb(98, 98, 98, 0.5);
+    border-radius: 30px;
+    margin-bottom: 30px;
+    float: left;
+}
+.disabled {
+    fill: rgb(217, 217, 217);
+    stroke: rgb(217, 217, 217);
+    stroke-width: 100;
+    opacity: 0.4;
+}
+.enabled {
+    fill: rgb(255, 255, 255);
+    stroke: rgb(255, 255, 255);
+    stroke-width: 100;
+    opacity: 0.75;
+}

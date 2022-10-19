@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Weather</title>
+        <meta name="description" content="Scrum Daddies 2022 Tri1 Final Project">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div style="scale: 100vw;">
+            <div class="nav">
+                <b></b>
+                <input type="text" placeholder="Location">
+                <button style="position: absolute; top: 60px; left: 435px;">My Location</button>
+                <button style="position: absolute; top: 60px; left: 605px;">Preferences</button>
+                <button style="position: absolute; top: 60px; left: 775px;">Credits</button>
+            </div>
+            <div>
+                <div class="location">
+                    WASHINGTON DC
+                </div>
+                <div class="temperature">
+                    71°
+                </div>
+                <div class="info">
+                    Cloudy
+                    <br>
+                    High: 71° Low: 62°
+                </div>
+            </div>
+            <!-- 238px from edge first one, 478px from top all --> 
+            <div>
+                <div style="position:absolute; left:50px; top: 525px;">
+                    <svg  width="79" height="79" viewBox="-50 -50 300 300">
+                        <polygon class="disabled" stroke-linejoin="round" points="25,100 200,200 200,0"/>
+                    </svg>
+                </div>
+                <div class="tile" style="position:absolute; left:172px; top: 350px;"></div>
+                <div class="tile" style="position:absolute; left:571px; top: 350px;"></div>
+                <div class="tile" style="position:absolute; left:968px; top: 350px;"></div>
+                <div style="position:absolute; right:50px; top: 525px;">
+                    <svg  width="79" height="79" viewBox="-50 -50 300 300">
+                        <polygon class="enabled" stroke-linejoin="round" points="0,0 0,200 175,100"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
