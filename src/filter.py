@@ -44,6 +44,7 @@ with open('./assets/weather.csv') as csv_file:
 	debugMsg("[~] READING LINES")
 	csv_reader = csv.reader(csv_file, delimiter=',')
 	line_count = 0
+	CurLocation=""
 	for row in csv_reader:
 		debugMsg("[~] READING LINE:")
 		debugMsg(line_count)
@@ -54,5 +55,11 @@ with open('./assets/weather.csv') as csv_file:
 				line_count += 1
 				quality = qualityProcess(row[21])
 				location = row[0].replace(",","")
-				data_file.write(f"[[{location}]]\n\tdate = '{row[1]}'\n\ttemperature = '{row[9]}'\n\tlow = '{row[7]}'\n\thigh = '{row[8]}'\n\tquality = '{quality}'\n")
+				date = row[1].replace("/",".")
+				if location == CurLocation:
+					data_file.write(f"[[{date}]]\ntemperature = '{row[9]}'\nlow = '{row[7]}'\nhigh = '{row[8]}'\nquality = '{quality}'\n")
+				else:
+					CurLocation = location
+					data_file.write(f"[[{location}]]\n[[{date}]]\ntemperature = '{row[9]}'\nlow = '{row[7]}'\nhigh = '{row[8]}'\nquality = '{quality}'\n")
+					
 debugMsg("[~] END")
