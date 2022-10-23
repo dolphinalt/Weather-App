@@ -1,19 +1,21 @@
-const fs = require('fs');
-const readline = require('readline');
+const $output = document.getElementById('./assets/data.toml')
+document.getElementById('file').onchange = function() {
+  var file = this.files[0];
 
-async function Process() {
-    dates=[]
-    temperature=[]
-    low=[]
-    high=[]
-    quality=[]
-    const fileStream = fs.createReadStream('./assets/data.toml');
+  var reader = new FileReader();
+  reader.onload = function(progressEvent) {
+    // Entire file
+    const text = this.result;
+    $output.innerText = text
 
-    const rl = readline.createInterface({
-        input: fileStream,
-        crlfDelay: Infinity
-    });
-
+    // By lines
+    var lines = text.split('\n');
+    for (var line = 0; line < lines.length; line++) {
+      console.log(lines[line]);
+    }
+  };
+  reader.readAsText(file);
+};
     for await (const line of rl) {
         if (/\[\[[aA-zZ]*\]\]/i.test(line)) {
             lineRes=line.split("[[").pop();
