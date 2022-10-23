@@ -6,8 +6,9 @@
         <meta name="description" content="Scrum Daddies 2022 Tri1 Final Project">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
+        <script src="./../main.js"></script>
     </head>
-    <body>
+    <body onload="Process()">
         <div style="scale: 100vw;">
             <div class="nav">
                 <b></b>
@@ -18,15 +19,15 @@
             </div>
             <div>
                 <div class="location">
-                    WASHINGTON DC
+                    <span id="location"></span>
                 </div>
                 <div class="temperature">
-                    71°
+                    <span id="temperature"></span>
                 </div>
                 <div class="info">
-                    Cloudy
+                    <span id="quality"></span>
                     <br>
-                    High: 71° Low: 62°
+                    High: <span id="highTemperature"></span> Low: <span id="lowTemperature"></span>
                 </div>
             </div>
             <!-- 238px from edge first one, 478px from top all --> 
