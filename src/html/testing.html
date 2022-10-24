@@ -3,17 +3,45 @@
     <head>
         <meta charset="utf-8">
         <title>Weather</title>
-        <meta name="description" content="Scrum Daddies 2022 Tri1 Final Project">
+        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="./../process.js"></script>
+        <style>
+            .tile {
+                height: 400px;
+                width: 300px;
+                /* Width:401, height: 494 */
+                background-color: rgb(98, 98, 98, 0.5);
+                border-radius: 30px;
+                margin-bottom: 30px;
+                float: left;
+            }
+        </style>
     </head>
-    <body onload="Process()">
-        Location: <span id="location"></span>
-        <br>
-        Temperature: <span id="temperature"></span>
-        <br>
-        Quality: <span id="quality"></span>
-        <br>
-        High: <span id="highTemperature"></span> Low: <span id="lowTemperature"></span>
+    <body>
+        <div id="tile"></div>
+        <div id="hidden" style="display: none;">
+            <div id="main">
+                <div id="mainDisplay">
+                    <br>
+                    <span id="todayTemperatureRes"></span>
+                    <br>
+                    <span id="todayQuality"></span>
+                    <br>
+                    High: <span id="todayHighTemperatureRes"></span> Low: <span id="todayLowTemperatureRes"></span>
+                </div>
+            </div>
+            <div id="detail">
+                <div id="tile" style="height:400px;width:300px;background-color:rgb(98,98,98,0.5);border-radius:30px;margin-bottom:30px;margin-left:30px;float:left;">
+                    <br>
+                    <span id="temperatureRes"></span>
+                    <br>
+                    <span id="quality"></span>
+                    <br>
+                    High: <span id="highTemperatureRes"></span> Low: <span id="lowTemperatureRes"></span>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
