@@ -9,13 +9,13 @@
         <script src="./../main.js"></script>
     </head>
     <body onload="main()">
-        <div style="scale: 100vw;">
-            <div class="nav">
-                <b></b>
-                <input type="text" placeholder="Location" id="search">
-                <button style="position: absolute; top: 60px; left: 470px;">My Location</button>
-                <button style="position: absolute; top: 60px; left: 620px;">Preferences</button>
-                <button style="position: absolute; top: 60px; left: 770px;">Credits</button>
+        <div style="scale: 100vw">
+            <div class="nav" style="height: 110px;" id="nav">
+                <b style="width:400px" id="searchFront"></b>
+                <input type="text" placeholder="Location" id="search" style="width:400px">
+                <button style="position: absolute; top: 60px; left: 470px; display: block;" id="locationButton">My Location</button>
+                <button style="position: absolute; top: 60px; left: 620px; display: block;"  id="preferencesButton"> Preferences</button>
+                <button style="position: absolute; top: 60px; left: 770px; display: block;"  id="creditsButton">Credits</button>
             </div>
             <div>
                 <div class="location">
@@ -96,12 +96,19 @@
     var input = document.getElementById("search");
     //When enter is clicked...
     input.addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
+    if (event.key == "Enter") {
+        
         event.preventDefault();
-        document.getElementById("searchButton").click();
-        //Unhide elements 
+        
+        //Expand search bar and hide other elements in the way
+        document.getElementById("locationButton").style.display = "none";
+        document.getElementById("preferencesButton").style.display = "none";
+        document.getElementById("creditsButton").style.display = "none";
+        document.getElementById("search").style.width = "1350px";
+        document.getElementById("searchFront").style.width = "1400px";
 
-
+        //Remove nav background 
+        document.getElementById("nav").style.height =  "300px";
     }
     });
     
