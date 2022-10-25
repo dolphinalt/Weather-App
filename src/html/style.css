@@ -27,10 +27,24 @@ Baseline
 .regular {
     font-family: "GlacialIndifferenceRegular", sans-serif;
 }
+/*
+Scrollable dropdowns
+*/
+.scrollable {
+    height: 100px; 
+    overflow-y: auto;
+    position: absolute;
+    top: 500px;
+    background-color: rgb(84, 84, 84,0.75);
+    border-radius: 20px;
+    margin-bottom: 30px;
+    width: 100vw;
+}
 /* 
 Navbar
 */
 .nav {
+    order: 0;
     height: 110px;
     width: 100vw;
     /* Width:401, height: 494 */
@@ -142,3 +156,4 @@ Multiple day rotatable display
     stroke-width: 100;
     opacity: 0.75;
 }
+

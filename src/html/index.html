@@ -9,13 +9,13 @@
         <script src="./../main.js"></script>
     </head>
     <body onload="main()">
-        <div style="scale: 100vw;">
-            <div class="nav">
-                <b></b>
-                <input type="text" placeholder="Location">
-                <button style="position: absolute; top: 60px; left: 435px;">My Location</button>
-                <button style="position: absolute; top: 60px; left: 605px;">Preferences</button>
-                <button style="position: absolute; top: 60px; left: 775px;">Credits</button>
+        <div style="scale: 100vw">
+            <div class="nav" style="height: 110px;" id="nav">
+                <b style="width:400px" id="searchFront"></b>
+                <input type="text" placeholder="Location" id="search" style="width:400px">
+                <button style="position: absolute; top: 60px; left: 470px; display: block;" id="locationButton">My Location</button>
+                <button style="position: absolute; top: 60px; left: 620px; display: block;"  id="preferencesButton"> Preferences</button>
+                <button style="position: absolute; top: 60px; left: 770px; display: block;"  id="creditsButton">Credits</button>
             </div>
             <div>
                 <div class="location">
@@ -30,6 +30,45 @@
                     High: <span id="highTemperature"></span> Low: <span id="lowTemperature"></span>
                 </div>
             </div>
+
+            <!--Submenus-->
+            <!--Searchbar-->
+            <div class="scrollable">
+                <table>
+                    <tr>
+                      <th>Company</th>
+                      <th>Contact</th> 
+                      <th>Country</th>
+                    </tr>
+                    <tr>
+                      <td>Alfreds Futterkiste</td>
+                      <td>Maria Anders</td> 
+                      <td>Germany</td>
+                    </tr>
+                    <tr>
+                      <td>Centro comercial Moctezuma</td>
+                      <td>Francisco Chang</td> 
+                      <td>Mexico</td>
+                    </tr>
+                    <tr>
+                        <td>Centro comercial Moctezuma</td>
+                        <td>Francisco Chang</td> 
+                        <td>Mexico</td>
+                    </tr>
+                    <tr>
+                        <td>Centro comercial Moctezuma</td>
+                        <td>Francisco Chang</td> 
+                        <td>Mexico</td>
+                    </tr>
+                    <tr>
+                        <td>Centro comercial Moctezuma</td>
+                        <td>Francisco Chang</td> 
+                        <td>Mexico</td>
+                    </tr>
+                  </table>
+            </div>
+
+
             <!-- 238px from edge first one, 478px from top all --> 
             <!-- to confirm recent version -->
             <div>
@@ -50,3 +89,27 @@
         </div>
     </body>
 </html>
+
+<!--Search button code-->
+
+<script>
+    var input = document.getElementById("search");
+    //When enter is clicked...
+    input.addEventListener("keypress", function(event) {
+    if (event.key == "Enter") {
+        
+        event.preventDefault();
+        
+        //Expand search bar and hide other elements in the way
+        document.getElementById("locationButton").style.display = "none";
+        document.getElementById("preferencesButton").style.display = "none";
+        document.getElementById("creditsButton").style.display = "none";
+        document.getElementById("search").style.width = "1350px";
+        document.getElementById("searchFront").style.width = "1400px";
+
+        //Remove nav background 
+        document.getElementById("nav").style.height =  "300px";
+    }
+    });
+    
+</script>
