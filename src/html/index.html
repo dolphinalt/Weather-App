@@ -16,7 +16,7 @@
                 <button style="position: absolute; top: 60px; left: 470px; display: block;" id="locationButton">My Location</button>
                 <button style="position: absolute; top: 60px; left: 620px; display: block;"  id="preferencesButton"> Preferences</button>
                 <button style="position: absolute; top: 60px; left: 770px; display: block;"  id="creditsButton">Credits</button>
-                <button style="position: absolute; top: 60px; left: 1375px; display: block; background: none; width: 40px; display: none"  id="closeSearch">X</button>
+                <button style="position: absolute; top: 60px; left: 1375px; display: block; background: none; width: 40px; display: none; color: 6px rgba(255, 255, 255, 0);"  id="closeSearch">X</button>
             </div>
             <div>
                 <div class="location">
@@ -121,8 +121,7 @@
     var input = document.getElementById("search");
     //When enter is clicked...
     input.addEventListener("keypress", function(event) {
-    if (event.key == "Enter") {
-        
+    if (event.key == "Enter") {    
         event.preventDefault();
         
         //Expand search bar and hide other elements in the way
@@ -145,25 +144,19 @@
 <!--X button code-->
 
 <script>
-    var input = document.getElementById("closeSearch");
+    var button = document.getElementById("closeSearch");
     //When stop button is clicked
-    input.addEventListener("keypress", function(event) {
-    if (event.key == "Enter") {
-        
+    button.addEventListener("click", function(event) {
         event.preventDefault();
         
         //Reverse everything done by searching:
         document.getElementById("locationButton").style.display = "block";
         document.getElementById("preferencesButton").style.display = "block";
         document.getElementById("creditsButton").style.display = "block";
-        document.getElementById("search").style.width = "1375px";
-        document.getElementById("searchFront").style.width = "1400px";
-
-        //Expand the nav bar, show X button and show results holder
-        document.getElementById("nav").style.height =  "300px";
-        document.getElementById("closeSearch").style.display =  "block";
-        document.getElementById("searchResults").style.display =  "block";
-
-    }
+        document.getElementById("search").style.width = "400px";
+        document.getElementById("searchFront").style.width = "400px";
+        document.getElementById("nav").style.height =   "110px";
+        document.getElementById("closeSearch").style.display =  "none";
+        document.getElementById("searchResults").style.display =  "none";
     });
 </script>
