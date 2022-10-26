@@ -33,39 +33,63 @@
 
             <!--Submenus-->
             <!--Searchbar-->
-            <div class="scrollable">
+            <div class="scrollable" id="searchResults" style="display: none">
                 <table>
                     <tr>
-                      <th>Company</th>
-                      <th>Contact</th> 
-                      <th>Country</th>
+                        <th>Search Results:</th>
                     </tr>
                     <tr>
-                      <td>Alfreds Futterkiste</td>
-                      <td>Maria Anders</td> 
-                      <td>Germany</td>
+                        <th>City, State, Country</th>
                     </tr>
                     <tr>
-                      <td>Centro comercial Moctezuma</td>
-                      <td>Francisco Chang</td> 
-                      <td>Mexico</td>
+                        <th>City, State, Country</th>
                     </tr>
                     <tr>
-                        <td>Centro comercial Moctezuma</td>
-                        <td>Francisco Chang</td> 
-                        <td>Mexico</td>
+                        <th>City, State, Country</th>
                     </tr>
                     <tr>
-                        <td>Centro comercial Moctezuma</td>
-                        <td>Francisco Chang</td> 
-                        <td>Mexico</td>
+                        <th>City, State, Country</th>
                     </tr>
                     <tr>
-                        <td>Centro comercial Moctezuma</td>
-                        <td>Francisco Chang</td> 
-                        <td>Mexico</td>
+                        <th>City, State, Country</th>
                     </tr>
-                  </table>
+                    <tr>
+                        <th>City, State, Country</th>
+                    </tr>
+                    <tr>
+                        <th>City, State, Country</th>
+                    </tr>
+                    <tr>
+                        <th>City, State, Country</th>
+                    </tr>
+                    <tr>
+                        <th>City, State, Country</th>
+                    </tr>
+                    <tr>
+                        <th>City, State, Country</th>
+                    </tr>
+                    <tr>
+                        <th>City, State, Country</th>
+                    </tr>
+                    <tr>
+                        <th>City, State, Country</th>
+                    </tr>
+                    <tr>
+                        <th>City, State, Country</th>
+                    </tr>
+                    <tr>
+                        <th>City, State, Country</th>
+                    </tr>
+                    <tr>
+                        <th>City, State, Country</th>
+                    </tr>
+                    <tr>
+                        <th>City, State, Country</th>
+                    </tr>
+                    <tr>
+                        <th>City, State, Country</th>
+                    </tr>
+                </table>
             </div>
 
 
@@ -107,9 +131,11 @@
         document.getElementById("search").style.width = "1375px";
         document.getElementById("searchFront").style.width = "1400px";
 
-        //Remove nav background 
+        //Expand the nav bar and show results holder
         document.getElementById("nav").style.height =  "300px";
+        document.getElementById("searchResults").style.display =  "block";
+
+        //TO-DO: Backend
     }
     });
-    
 </script>

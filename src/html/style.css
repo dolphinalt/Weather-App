@@ -31,14 +31,15 @@ Baseline
 Scrollable dropdowns
 */
 .scrollable {
-    height: 100px; 
+    height: 190px; 
     overflow-y: auto;
     position: absolute;
-    top: 500px;
-    background-color: rgb(84, 84, 84,0.75);
-    border-radius: 20px;
-    margin-bottom: 30px;
-    width: 100vw;
+    top: 60px;
+    left: 20px;
+    width: 1360vw;
+    font-family: "GlacialIndifferenceRegular", sans-serif;
+    font-size: 19px;
+    -webkit-text-fill-color: rgb(255, 255, 255, 0.6);
 }
 /* 
 Navbar
