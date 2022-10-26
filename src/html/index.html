@@ -140,7 +140,7 @@
     });
 </script>
 
-<!--X button code-->
+<!--Search X button code-->
 
 <script>
     var button = document.getElementById("closeSearch");
@@ -148,7 +148,7 @@
     button.addEventListener("click", function(event) {
         event.preventDefault();
         
-        //Reverse everything done by searching: idk whats wrong
+        //Reverse everything done by searching
         document.getElementById("locationButton").style.display = "block";
         document.getElementById("preferencesButton").style.display = "block";
         document.getElementById("creditsButton").style.display = "block";
@@ -160,6 +160,30 @@
     });
 </script>
 
+<!--Preferences button-->
+
+<script>
+    var button = document.getElementById("locationButton");
+    open = false;
+    button.addEventListener("click", function(event) {
+        //Is the menu already open?
+        if(!open) {
+            //Open it
+            //Hide all other things in nav and expand my location, also move location button to be centered
+            document.getElementById("search").style.display = "none";
+            document.getElementById("searchFront").style.display = "none";
+            document.getElementById("preferencesButton").style.display = "none";
+            document.getElementById("creditsButton").style.display = "none";
+            document.getElementById("locationButton").style.width = "1375px";
+            document.getElementById("locationButton").style.width = "1375px";
+            //Expand nav bar 
+            document.getElementById("nav").style.height =  "300px";
+        } else {
+            //Close it
+        }
+    });
+</script>
+
 <!--Typing esc closes menus-->
 <script>
     this.addEventListener("keypress", function(event) {
@@ -168,7 +192,7 @@
             //Save all close menu buttons
             var closeSearch = document.getElementById("closeSearch");
 
-            //Trigger pressing the button
+            //Trigger pressing the buttons
                 closeSearch.click();
         }
     });
