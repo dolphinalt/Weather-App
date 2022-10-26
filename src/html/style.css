@@ -72,7 +72,14 @@ Navbar
     position: absolute;
     top: 60px;
     left: 33px;
+    transition: filter 300ms ease-out 0ms;
+    transition: transform 300ms ease-out 0ms;
 }
+/* .nav input:hover {
+    filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0, 0.5));
+    transform: scale(1.1);
+    transform: translateY(-2px);
+} */
 ::placeholder {
     font-family: "GlacialIndifferenceRegular", sans-serif;
     color: rgb(167, 167, 167);
@@ -85,6 +92,8 @@ Navbar
     position: absolute;
     top: 60px;
     left: 15px;
+    transition: filter 300ms ease-out 0ms;
+    transition: transform 300ms ease-out 0ms;
 }
 .nav button {
     font-family: "GlacialIndifferenceRegular", sans-serif;
@@ -96,6 +105,13 @@ Navbar
     border-radius: 51px;
     border: none;
     outline: none;
+    transition: filter 300ms ease-out 0ms;
+    transition: transform 300ms ease-out 0ms;
+}
+.nav button:hover {
+    filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0, 0.5));
+    transform: scale(1.1);
+    transform: translateY(-2px);
 }
 /* 
 Today's info
@@ -156,5 +172,10 @@ Multiple day rotatable display
     stroke: rgb(255, 255, 255);
     stroke-width: 100;
     opacity: 0.75;
+    transition: filter 300ms ease-out 0ms;
+    transition: transform 300ms ease-out 0ms;
 }
-
+.enabled:hover {
+    filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0, 0.5));
+    transform: scale(1.1);
+}
