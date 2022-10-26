@@ -9,13 +9,14 @@
         <script src="./../main.js"></script>
     </head>
     <body onload="main()">
-        <div style="scale: 100vw;">
-            <div class="nav">
-                <b></b>
-                <input type="text" placeholder="Location">
-                <button style="position: absolute; top: 60px; left: 435px;">My Location</button>
-                <button style="position: absolute; top: 60px; left: 605px;">Preferences</button>
-                <button style="position: absolute; top: 60px; left: 775px;">Credits</button>
+        <div style="scale: 100vw">
+            <div class="nav" style="height: 110px;" id="nav">
+                <b style="width:400px" id="searchFront"></b>
+                <input type="text" placeholder="Location" id="search" style="width:375px">
+                <button style="position: absolute; top: 60px; left: 470px; display: block;" id="locationButton">My Location</button>
+                <button style="position: absolute; top: 60px; left: 620px; display: block;"  id="preferencesButton"> Preferences</button>
+                <button style="position: absolute; top: 60px; left: 770px; display: block;"  id="creditsButton">Credits</button>
+                <button style="position: absolute; top: 60px; left: 1375px; display: block; background: none; width: 40px; display: none;"  id="closeSearch">X</button>
             </div>
             <div>
                 <div class="location">
@@ -30,6 +31,69 @@
                     High: <span id="highTemperature"></span> Low: <span id="lowTemperature"></span>
                 </div>
             </div>
+
+            <!--Submenus-->
+            <!--Searchbar-->
+            <div class="scrollable" id="searchResults" style="display: none">
+                <table>
+                    <tr>
+                        <th>Search Results:</th>
+                    </tr>
+                    <tr>
+                        <th>San Diego, California, USA</th>
+                    </tr>
+                    <tr>
+                        <th>San Diego, California, USA</th>
+                    </tr>
+                    <tr>
+                        <th>San Diego, California, USA</th>
+                    </tr>
+                    <tr>
+                        <th>San Diego, California, USA</th>
+                    </tr>
+                    <tr>
+                        <th>San Diego, California, USA</th>
+                    </tr>
+                    <tr>
+                        <th>San Diego, California, USA</th>
+                    </tr>
+                    <tr>
+                        <th>San Diego, California, USA</th>
+                    </tr>
+                    <tr>
+                        <th>San Diego, California, USA</th>
+                    </tr>
+                    <tr>
+                        <th>San Diego, California, USA</th>
+                    </tr>
+                    <tr>
+                        <th>San Diego, California, USA</th>
+                    </tr>
+                    <tr>
+                        <th>San Diego, California, USA</th>
+                    </tr>
+                    <tr>
+                        <th>San Diego, California, USA</th>
+                    </tr>
+                    <tr>
+                        <th>San Diego, California, USA</th>
+                    </tr>
+                    <tr>
+                        <th>San Diego, California, USA</th>
+                    </tr>
+                    <tr>
+                        <th>San Diego, California, USA</th>
+                    </tr>
+                    <tr>
+                        <th>San Diego, California, USA</th>
+                    </tr>
+                    <tr>
+                        <th>San Diego, California, USA</th>
+                    </tr>
+                </table>
+            </div>
+
+
             <!-- 238px from edge first one, 478px from top all --> 
             <!-- to confirm recent version -->
             <div>
@@ -50,3 +114,49 @@
         </div>
     </body>
 </html>
+
+<!--Search button code-->
+
+<script>
+    var input = document.getElementById("search");
+    //When enter is clicked...
+    input.addEventListener("keypress", function(event) {
+    if (event.key == "Enter") {    
+        event.preventDefault();
+        
+        //Expand search bar and hide other elements in the way
+        document.getElementById("locationButton").style.display = "none";
+        document.getElementById("preferencesButton").style.display = "none";
+        document.getElementById("creditsButton").style.display = "none";
+        document.getElementById("search").style.width = "1375px";
+        document.getElementById("searchFront").style.width = "1400px";
+
+        //Expand the nav bar, show X button and show results holder
+        document.getElementById("nav").style.height =  "300px";
+        document.getElementById("closeSearch").style.display =  "block";
+        document.getElementById("searchResults").style.display =  "block";
+
+        //TO-DO: Backend
+    }
+    });
+</script>
+
+<!--X button code-->
+
+<script>
+    var button = document.getElementById("closeSearch");
+    //When stop button is clicked
+    button.addEventListener("click", function(event) {
+        event.preventDefault();
+        
+        //Reverse everything done by searching:
+        document.getElementById("locationButton").style.display = "block";
+        document.getElementById("preferencesButton").style.display = "block";
+        document.getElementById("creditsButton").style.display = "block";
+        document.getElementById("search").style.width = "375px";
+        document.getElementById("searchFront").style.width = "400px";
+        document.getElementById("nav").style.height =   "110px";
+        document.getElementById("closeSearch").style.display =  "none";
+        document.getElementById("searchResults").style.display =  "none";
+    });
+</script>

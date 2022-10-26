@@ -58,6 +58,7 @@ $(function(){
             }
             var html = $("#detail").html()
             var $div1 = $(html).appendTo("#tile")
+            $div1.find("#date").text(dates[idx])
             $div1.find("#temperatureRes").text(temperatures[idx])
             $div1.find("#highTemperatureRes").text(lows[idx])
             $div1.find("#lowTemperatureRes").text(highs[idx])
