@@ -159,3 +159,17 @@
         document.getElementById("searchResults").style.display =  "none";
     });
 </script>
+
+<!--Typing esc closes menus-->
+<script>
+    this.addEventListener("keypress", function(event) {
+        //If esc is pressed...
+        if (event.keyCode == 27) {
+            //Save all close menu buttons
+            var closeSearch = document.getElementById("closeSearch");
+
+            //Trigger pressing the button
+                closeSearch.click();
+        }
+    });
+</script>
