@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Weather</title>
+        <title>SD: Weather App!</title>
         <link rel="icon" type="image/x-icon" href="/src/images/favicon.ico">
         <meta name="description" content="Scrum Daddy's 2022 Tri1 Final Project">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -173,19 +173,19 @@
 <!--Preferences button-->
 
 <script>
-    var button = document.getElementById("locationButton");
+    var button = document.getElementById("preferencesButton");
     open = false;
     button.addEventListener("click", function(event) {
         //Is the menu already open?
         if(!open) {
             //Open it
-            //Hide all other things in nav and expand my location, also move location button to be centered
+            //Hide all other things in nav and expand preferences, also move preferences button to be centered
             document.getElementById("search").style.display = "none";
             document.getElementById("searchFront").style.display = "none";
-            document.getElementById("preferencesButton").style.display = "none";
+            document.getElementById("locationButton").style.display = "none";
             document.getElementById("creditsButton").style.display = "none";
-            document.getElementById("locationButton").style.width = "1375px";
-            document.getElementById("locationButton").style.left = "20px";
+            document.getElementById("preferencesButton").style.width = "1375px";
+            document.getElementById("preferencesButton").style.left = "20px";
             //Expand nav bar and set as closed
             document.getElementById("nav").style.height =  "300px";
             open = true;
@@ -194,14 +194,55 @@
             //Show all other things in nav and put my location back
             document.getElementById("search").style.display = "block";
             document.getElementById("searchFront").style.display = "block";
-            document.getElementById("preferencesButton").style.display = "block";
+            document.getElementById("locationButton").style.display = "block";
             document.getElementById("creditsButton").style.display = "block";
-            document.getElementById("locationButton").style.width = "125px";
-            document.getElementById("locationButton").style.left = "470px";
+            document.getElementById("preferencesButton").style.width = "125px";
+            document.getElementById("preferencesButton").style.left =  "620px";
             //Set nav bar to normal and set open as false
             document.getElementById("nav").style.height =  "110px";
             open = false;
         }
+        function getOpenPreferences() {   
+            return open;
+         }  
+    });
+</script>
+
+<!--Credits button-->
+
+<script>
+    var button = document.getElementById("creditsButton");
+    open = false;
+    button.addEventListener("click", function(event) {
+        //Is the menu already open?
+        if(!open) {
+            //Open it
+            //Hide all other things in nav and expand preferences, also move preferences button to be centered
+            document.getElementById("search").style.display = "none";
+            document.getElementById("searchFront").style.display = "none";
+            document.getElementById("locationButton").style.display = "none";
+            document.getElementById("preferencesButton").style.display = "none";
+            document.getElementById("creditsButton").style.width = "1375px";
+            document.getElementById("creditsButton").style.left = "20px";
+            //Expand nav bar and set as closed
+            document.getElementById("nav").style.height =  "300px";
+            open = true;
+        } else {
+            //Close it
+            //Show all other things in nav and put my location back
+            document.getElementById("search").style.display = "block";
+            document.getElementById("searchFront").style.display = "block";
+            document.getElementById("locationButton").style.display = "block";
+            document.getElementById("preferencesButton").style.display = "block";
+            document.getElementById("creditsButton").style.width = "125px";
+            document.getElementById("creditsButton").style.left =  "770px";
+            //Set nav bar to normal and set open as false
+            document.getElementById("nav").style.height =  "110px";
+            open = false;
+        }
+        function getOpenCredits() {   
+            return open;
+         }  
     });
 </script>
 
@@ -209,13 +250,28 @@
 <script>
     // BTW THIS DOESN'T WORK
     this.addEventListener("keypress", function(event) {
+        //Save all close menu button
+        var closeSearch = document.getElementById("closeSearch");
+
+
         //If esc is pressed...
         if (event.keyCode == 27) {
-            //Save all close menu buttons
-            var closeSearch = document.getElementById("closeSearch");
+            //Press the search button
+            closeSearch.click();
 
-            //Trigger pressing the buttons
-                closeSearch.click();
+            //Manually do the other ones b/c they don't work that way 
+            document.getElementById("search").style.display = "block";
+            document.getElementById("searchFront").style.display = "block";
+            document.getElementById("locationButton").style.display = "block";
+            document.getElementById("preferencesButton").style.display = "block";
+            document.getElementById("creditsButton").style.width = "125px";
+            document.getElementById("creditsButton").style.left =  "770px";
+            document.getElementById("nav").style.height =  "110px";
+            document.getElementById("locationButton").style.display = "block";
+            document.getElementById("creditsButton").style.display = "block";
+            document.getElementById("preferencesButton").style.width = "125px";
+            document.getElementById("preferencesButton").style.left =  "620px";
+            
         }
     });
 </script>
