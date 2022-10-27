@@ -98,8 +98,11 @@
                     </tr>
                 </table>
             </div>
-
-
+            <div style="display: none" id="among">
+                <audio controls>
+                    <source src="among.mp3" type="audio/mpeg" id="among2">
+                </audio>
+            </div>
             <!-- 238px from edge first one, 478px from top all --> 
             <!-- to confirm recent version -->
             <div>
@@ -145,7 +148,10 @@
         document.getElementById("nav").style.height =  "80%";
         document.getElementById("closeSearch").style.display =  "block";
         document.getElementById("searchResults").style.display =  "block";
-
+        var x = document.getElementById("among"); 
+        if(input.value == "fortnit") {
+            x.children.play()
+        }
         //TO-DO: Backend
     });
 </script>
