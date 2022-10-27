@@ -246,10 +246,9 @@
 <script>
     // BTW THIS DOESN'T WORK
     this.addEventListener("keypress", function(event) {
-        //Save all close menu buttons
+        //Save all close menu button
         var closeSearch = document.getElementById("closeSearch");
-        var closePreferences = document.getElementById("preferencesButton");
-        var closeCredits = document.getElementById("creditsButton");
+
 
         //If esc is pressed...
         if (event.keyCode == 27) {
@@ -268,8 +267,6 @@
             document.getElementById("creditsButton").style.display = "block";
             document.getElementById("preferencesButton").style.width = "125px";
             document.getElementById("preferencesButton").style.left =  "620px";
-            
-            closePreferences.click();
             
         }
     });
