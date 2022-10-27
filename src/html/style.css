@@ -163,7 +163,7 @@ testing this
 */
 .WebContainer{
     width:100%;
-    min-width:1440px;
+    min-width:400px;
     height:auto;
 }
 
