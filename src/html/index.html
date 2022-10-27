@@ -3,7 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title>Weather</title>
-        <meta name="description" content="Scrum Daddies 2022 Tri1 Final Project">
+        <link rel="icon" type="image/x-icon" href="/src/images/favicon.ico">
+        <meta name="description" content="Scrum Daddy's 2022 Tri1 Final Project">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
         <script src="./../main.js"></script>
@@ -12,7 +13,7 @@
         <div style="scale: 100vw">
             <div class="nav" style="height: 110px;" id="nav">
                 <b style="width:400px" id="searchFront"></b>
-                <input type="text" placeholder="Location" id="search" style="width:375px">
+                <input type="text" placeholder="Location Selector; Just hit enter to search!" id="search" style="width:375px">
                 <button style="position: absolute; top: 60px; left: 470px; display: block;" id="locationButton">My Location</button>
                 <button style="position: absolute; top: 60px; left: 620px; display: block;"  id="preferencesButton"> Preferences</button>
                 <button style="position: absolute; top: 60px; left: 770px; display: block;"  id="creditsButton">Credits</button>
@@ -125,8 +126,8 @@
     var input = document.getElementById("search");
     //When enter is clicked...
     input.addEventListener("keypress", function(event) {
-    if (event.key == "Enter") {    
-        event.preventDefault();
+    
+        //event.preventDefault();
         
         //Expand search bar and hide other elements in the way
         document.getElementById("locationButton").style.display = "none";
@@ -141,11 +142,10 @@
         document.getElementById("searchResults").style.display =  "block";
 
         //TO-DO: Backend
-    }
     });
 </script>
 
-<!--X button code-->
+<!--Search X button code-->
 
 <script>
     var button = document.getElementById("closeSearch");
@@ -153,7 +153,7 @@
     button.addEventListener("click", function(event) {
         event.preventDefault();
         
-        //Reverse everything done by searching:
+        //Reverse everything done by searching
         document.getElementById("locationButton").style.display = "block";
         document.getElementById("preferencesButton").style.display = "block";
         document.getElementById("creditsButton").style.display = "block";
@@ -162,5 +162,54 @@
         document.getElementById("nav").style.height =   "110px";
         document.getElementById("closeSearch").style.display =  "none";
         document.getElementById("searchResults").style.display =  "none";
+    });
+</script>
+
+<!--Preferences button-->
+
+<script>
+    var button = document.getElementById("locationButton");
+    open = false;
+    button.addEventListener("click", function(event) {
+        //Is the menu already open?
+        if(!open) {
+            //Open it
+            //Hide all other things in nav and expand my location, also move location button to be centered
+            document.getElementById("search").style.display = "none";
+            document.getElementById("searchFront").style.display = "none";
+            document.getElementById("preferencesButton").style.display = "none";
+            document.getElementById("creditsButton").style.display = "none";
+            document.getElementById("locationButton").style.width = "1375px";
+            document.getElementById("locationButton").style.left = "20px";
+            //Expand nav bar and set as closed
+            document.getElementById("nav").style.height =  "300px";
+            open = true;
+        } else {
+            //Close it
+            //Show all other things in nav and put my location back
+            document.getElementById("search").style.display = "block";
+            document.getElementById("searchFront").style.display = "block";
+            document.getElementById("preferencesButton").style.display = "block";
+            document.getElementById("creditsButton").style.display = "block";
+            document.getElementById("locationButton").style.width = "125px";
+            document.getElementById("locationButton").style.left = "470px";
+            //Set nav bar to normal and set open as false
+            document.getElementById("nav").style.height =  "110px";
+            open = false;
+        }
+    });
+</script>
+
+<!--Typing esc closes menus-->
+<script>
+    this.addEventListener("keypress", function(event) {
+        //If esc is pressed...
+        if (event.keyCode == 27) {
+            //Save all close menu buttons
+            var closeSearch = document.getElementById("closeSearch");
+
+            //Trigger pressing the buttons
+                closeSearch.click();
+        }
     });
 </script>

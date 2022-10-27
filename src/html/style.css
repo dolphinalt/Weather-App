@@ -179,3 +179,13 @@ Multiple day rotatable display
     filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0, 0.5));
     transform: scale(1.1);
 }
+
+/*
+testing this
+*/
+.WebContainer{
+    width:100%;
+    min-width:400px;
+    height:auto;
+}
+
