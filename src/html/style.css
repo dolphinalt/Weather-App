@@ -4,10 +4,10 @@ setup
 body {
     padding: 0;
     margin: 0;
-    background-image: url("./assets/Washington,DC,USA.png");
+    background-image: url("./assets/San,Diego,USA.png");
     background-position: top;
     background-repeat: no-repeat;
-    background-size: 101%;
+    background-size: 115%;
 }
 @font-face {
     font-family: GlacialIndifferenceBold;
