@@ -161,5 +161,9 @@ Multiple day rotatable display
 /*
 testing this
 */
-
+.WebContainer{
+    width:100%;
+    min-width:1440px;
+    height:auto;
+}
 
