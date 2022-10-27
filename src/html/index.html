@@ -176,11 +176,22 @@
             document.getElementById("preferencesButton").style.display = "none";
             document.getElementById("creditsButton").style.display = "none";
             document.getElementById("locationButton").style.width = "1375px";
-            document.getElementById("locationButton").style.width = "1375px";
-            //Expand nav bar 
+            document.getElementById("locationButton").style.left = "20px";
+            //Expand nav bar and set as closed
             document.getElementById("nav").style.height =  "300px";
+            open = true;
         } else {
             //Close it
+            //Show all other things in nav and put my location back
+            document.getElementById("search").style.display = "block";
+            document.getElementById("searchFront").style.display = "block";
+            document.getElementById("preferencesButton").style.display = "block";
+            document.getElementById("creditsButton").style.display = "block";
+            document.getElementById("locationButton").style.width = "125px";
+            document.getElementById("locationButton").style.left = "470px";
+            //Set nav bar to normal and set open as false
+            document.getElementById("nav").style.height =  "110px";
+            open = false;
         }
     });
 </script>
