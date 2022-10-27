@@ -158,3 +158,12 @@ Multiple day rotatable display
     opacity: 0.75;
 }
 
+/*
+testing
+*/
+.WebContainer{
+    width:100%;
+    min-width:1440px;
+    height:auto;
+}
+
