@@ -117,6 +117,32 @@
                     </tr>
                 </table>
             </div>
+
+            <!--Preferences-->
+            <div class="scrollable" id="preferencesMenu" style="display: none; z-index:999999;">
+                <table>
+                    <tr>
+                        <th>Item</th>
+                        <th>Input</th>
+                        <th>Importance of Item</th>
+                    </tr>
+                    <tr>
+                        <td>Favorite temperature? </td>
+                        <td><input id="favWeather" type="range" min="30" max="100" value="75" class="slider" style="width: 250px"></td>
+                        <td><input id="favAvgTempImportance" type="range" min="20" max="100" value="80" class="slider" style="width: 250px"></td>
+                    </tr>
+                    <tr>
+                        <td>Importance of clear weather?</td>
+                        <td><input id="favWeather" type="range" min="0" max="100" value="80" class="slider" style="width: 250px"></td>
+                        <td><input id="favWeatherImportance" type="range" min="20" max="100" value="70" class="slider" style="width: 250px"></td>
+                    </tr>
+                    <tr>
+                        <td>Importance of uniform heat throughout day?)</td>
+                        <td><input id="favDifTemp" type="range" min="0" max="100" value="30" class="slider" style="width: 250px"></td>
+                        <td><input id="favDifTempImportance" type="range" min="20" max="100" value="50" class="slider" style="width: 250px"></td>
+                    </tr>
+                </table>
+            </div>
             <!--<div style="display: none" id="among">
                 <audio controls>
                     <source src="among.mp3" type="audio/mpeg" id="among2">
@@ -213,8 +239,10 @@
             document.getElementById("preferencesButton").style.width = "1375px";
             document.getElementById("preferencesButton").style.left = "20px";
             //Expand nav bar and set as closed
-            document.getElementById("nav").style.height =  "100%";
+            document.getElementById("nav").style.height =  "80%";
             open = true;
+            //Show stuff
+            document.getElementById("preferencesMenu").style.display = "block";
         } else {
             //Close it
             //Show all other things in nav and put my location back
@@ -226,7 +254,10 @@
             document.getElementById("preferencesButton").style.left =  "620px";
             //Set nav bar to normal and set open as false
             document.getElementById("nav").style.height =  "110px";
-            open = false;
+            open = false;  
+            //Un-Show stuff
+            document.getElementById("preferencesMenu").style.display = "None";
+            
         }
         function getOpenPreferences() {   
             return open;

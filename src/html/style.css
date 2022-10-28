@@ -53,14 +53,12 @@ Sliders
     border-radius: 5px;
     background: rgb(167, 167, 167);;
     outline: none;
-    opacity: 0.9;
+    opacity: 1;
     -webkit-transition: .2s;
     transition: opacity .2s;
   }
   
-  .slider:hover {
-    opacity: 1;
-  }
+  
   
   .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
