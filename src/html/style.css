@@ -185,9 +185,9 @@ Multiple day rotatable display
 */
 .tile {
     height: 400px;
-    width: 300px;
+    width: 25%;
     /* Width:401, height: 494 */
-    background-color: rgb(98, 98, 98, 0.5);
+    background-color: rgb(98, 98, 98, 0.7);
     border-radius: 30px;
     margin-bottom: 30px;
     float: left;
@@ -210,13 +210,3 @@ Multiple day rotatable display
     filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0, 0.5));
     transform: scale(1.1);
 }
-
-/*
-testing this
-*/
-.WebContainer{
-    width:100%;
-    min-width:400px;
-    height:auto;
-}
-
