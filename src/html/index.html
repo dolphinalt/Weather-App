@@ -9,7 +9,18 @@
         <link rel="stylesheet" href="style.css">
         <script src="./../main.js"></script>
     </head>
-    <body style="zoom: 100%;">
+    <!-- resize code -->
+    <body style="scale: 100%;">
+        <script>
+            window.onresize = resize;
+            function resize() {
+                var sourceSize = 1440;
+                var currentSize = window.innerWidth;
+                var resize = currentSize/sourceSize;
+                var percent = resize*100;
+                document.body.style.transform = "scale(" + percent + "%)"
+            }
+        </script>
         <div style="scale: 100vw">
             <div style="position:absolute;width:100%;height:300px;z-index:-1;">
                 <div class="nav" style="height: 110px;" id="nav">
@@ -28,10 +39,10 @@
                         WASHINGTON DC
                     </div>
                 </div>
-                <div style="position:absolute;width:100%;height:300px;top:117px;left:25px;z-index:-1;">
-                    <div class="temperature" style="text-align:center">
+                <div style="position:absolute;width:100%;height:300px;top:117px;z-index:-1;">
+                    <div class="temperature" style="text-align:center;">
                         <!-- <span id="temperature"></span> -->
-                        74°
+                            74
                     </div>
                 </div>
                 <div style="position:absolute;width:100%;height:300px;top:258px;z-index:-1;">
@@ -109,23 +120,14 @@
             <!-- 238px from edge first one, 478px from top all --> 
             <!-- to confirm recent version -->
             <div>
-                <div style="position:absolute;width:100%;height:300px;top:525px;z-index:-1;">
-                    <div id="arrow">
-                        <div style="position:absolute;left:125px;">
+                <div id="arrow">
+                    <div style="position:absolute;width:100%;height:300px;z-index:1;">
+                        <div style="position:absolute;left:75px;top:525px;">
                             <svg width="100" height="100" viewBox="-100 -100 500 500">
                                 <polygon class="enabled" stroke-linejoin="round" points="25,100 200,200 200,0"/>
                             </svg>
                         </div>
-                    </div>
-                </div>
-                <div style="position:absolute;width:100%;height:300px;top:0px;left:-150px;z-index:-1;">
-                    <div class="tile" style="position:absolute; left:25%; top: 350px;"></div>
-                    <div class="tile" style="position:absolute; left:50%; top: 350px;"></div>
-                    <div class="tile" style="position:absolute; left:75%; top: 350px;"></div>
-                </div>
-                <div style="position:absolute;width:100%;height:300px;top:0px;top:525px;z-index:-1;">
-                    <div id="arrow">
-                        <div style="position:absolute;right:125px;">
+                        <div style="position:absolute;right:75px;top:525px;">
                             <div>
                                 <svg width="100" height="100" viewBox="-100 -100 500 500">
                                     <polygon class="enabled" stroke-linejoin="round" points="0,0 0,200 175,100"/>
@@ -133,6 +135,11 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div style="position:absolute;width:100%;height:300px;top:0px;z-index:-1;">
+                    <div class="tile" style="position:absolute; left:13.2%; top: 350px;"></div>
+                    <div class="tile" style="position:absolute; left:38.9%; top: 350px;"></div>
+                    <div class="tile" style="position:absolute; left:64.6%; top: 350px;"></div>
                 </div>
             </div>
         </div>
