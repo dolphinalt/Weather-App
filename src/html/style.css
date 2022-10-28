@@ -60,6 +60,7 @@ Navbar
     font-family: "GlacialIndifferenceRegular", sans-serif;
     font-size: 19px;
     color: rgb(167, 167, 167);
+    transition: all 300ms ease-out 0ms;
     z-index:99998;
 }
 .nav input[type=text] {
@@ -107,8 +108,7 @@ Navbar
     border-radius: 51px;
     border: none;
     outline: none;
-    transition: filter 300ms ease-out 0ms;
-    transition: transform 300ms ease-out 0ms;
+    transition: all 300ms ease-out 0ms;
 }
 .nav button:hover {
     filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0, 0.5));
@@ -125,29 +125,21 @@ Today's info
     caret-color: rgb(255, 255, 255);
 	-webkit-text-stroke: 6px rgb(255, 255, 255, 0.6);
 	-webkit-text-fill-color: transparent;
-    position: relative;
+    /* position: absolute; */
     top: 92px;
+    left: 0%;
     /* 186px */
 }
 .temperature {
     font-family: "GlacialIndifferenceBold", sans-serif;
     font-size: 131px;
     color: white;
-    position: absolute;
-    top: 117px;
-    /* top: -45px; */
-    left: 653px;
-    /* left: 896px; */
-    /* 896px */
     text-shadow: rgba(0, 0, 0, 0.4) 0px 7.2px 30.6px;
 }
 .info {
     font-family: "GlacialIndifferenceBold", sans-serif;
     font-size: 29.2px;
     color: white;
-    text-align: center;
-    position: relative;
-    top: 98px;
     /* 802px */
     text-shadow: rgba(0, 0, 0, 0.4) 0px 7.2px 30.6px;
 }
