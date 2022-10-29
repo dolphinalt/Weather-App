@@ -124,7 +124,8 @@ Navbar
 }
 .nav b {
     height: 37px;
-    width: 375px;
+    width: 34%;
+    max-width: 97.5%;
     background-color: rgb(255, 255, 255, 0.75);
     border-radius: 51px;
     position: absolute;
@@ -157,8 +158,8 @@ Today's info
     font-family: "GlacialIndifferenceBold", sans-serif;
     font-size: 131px;
     text-align: center;
-    caret-color: rgb(255, 255, 255);
-	-webkit-text-stroke: 6px rgb(255, 255, 255, 0.6);
+    caret-color: rgb(255, 255, 255, 0.72);
+	-webkit-text-stroke: 6px rgb(255, 255, 255, 0.72);
 	-webkit-text-fill-color: transparent;
     /* position: absolute; */
     top: 92px;
