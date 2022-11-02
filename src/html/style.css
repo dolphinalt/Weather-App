@@ -7,7 +7,7 @@ body {
     background-image: url("./assets/San,Diego,USA.png");
     background-position: top;
     background-repeat: no-repeat;
-    background-size: 125%;
+    background-size: 106%;
     background-color:rgb(98, 98, 98);
 }
 @font-face {
@@ -36,10 +36,10 @@ Scrollable dropdowns
     overflow-y: auto;
     position: absolute;
     top: 60px;
-    left: 1.389%;
+    left: 20px;
     width: 1360vw;
     font-family: "GlacialIndifferenceRegular", sans-serif;
-    font-size: 1.319%;
+    font-size: 19px;
     -webkit-text-fill-color: rgb(255, 255, 255, 0.6);
 
 }
@@ -49,8 +49,8 @@ Sliders
 .slider {
     -webkit-appearance: none;
     width: 20%;
-    height: 1.0417%;
-    border-radius: .347%;
+    height: 15px;
+    border-radius: 5px;
     background: rgb(167, 167, 167);;
     outline: none;
     opacity: 1;
@@ -63,16 +63,16 @@ Sliders
   .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 1.736%;
-    height: 1.736%;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
     background: #ffffff;
     cursor: pointer;
   }
   
   .slider::-moz-range-thumb {
-    width: 1.736%;
-    height: 1.736%;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
     background: #ffffff;
     cursor: pointer;
@@ -86,10 +86,10 @@ Navbar
     width: 100%;
     /* Width:401, height: 494 */
     background-color: rgb(84, 84, 84,0.9);
-    border-radius: 1.389%;
-    margin-bottom: 2.083%;
+    border-radius: 20px;
+    margin-bottom: 30px;
     float: left;
-    margin-right: 1.389%;
+    margin-right: 20px;
     position: absolute;
     top: -50px;
     font-family: "GlacialIndifferenceRegular", sans-serif;
@@ -102,14 +102,14 @@ Navbar
     font-family: "GlacialIndifferenceRegular", sans-serif;
     border: none;
     outline: none;
-    height: 2.431%;
-    width: 23.264%;
+    height: 35px;
+    width: 335px;
     font-size: 19px;
     color: rgb(84, 84, 84);
     background-color: transparent;
     position: absolute;
     top: 60px;
-    left: 2.292%;
+    left: 33px;
     transition: filter 300ms ease-out 0ms;
     transition: transform 300ms ease-out 0ms;
 }
@@ -127,21 +127,21 @@ Navbar
     width: 34%;
     max-width: 97.5%;
     background-color: rgb(255, 255, 255, 0.75);
-    border-radius: 3.541%;
+    border-radius: 51px;
     position: absolute;
     top: 60px;
-    left: 1.042%;
+    left: 15px;
     transition: filter 300ms ease-out 0ms;
     transition: transform 300ms ease-out 0ms;
 }
 .nav button {
     font-family: "GlacialIndifferenceRegular", sans-serif;
     color: rgb(255, 255, 255);
-    font-size: 1.042%;
-    height: 2.569%px;
-    width: 8.68%px;
+    font-size: 15px;
+    height: 37px;
+    width: 125px;
     background-color: rgb(166, 166, 166, 0.75);
-    border-radius: 3.541%;
+    border-radius: 51px;
     border: none;
     outline: none;
     transition: all 300ms ease-out 0ms;
@@ -149,17 +149,17 @@ Navbar
 .nav button:hover {
     filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0, 0.5));
     transform: scale(1.1);
-    transform: translateY(-.139%);
+    transform: translateY(-2px);
 }
 /* 
 Today's info
 */
 .location {
     font-family: "GlacialIndifferenceBold", sans-serif;
-    font-size: 9.097%;
+    font-size: 131px;
     text-align: center;
     caret-color: rgb(255, 255, 255, 0.72);
-	-webkit-text-stroke: .417% rgb(255, 255, 255, 0.72);
+	-webkit-text-stroke: 6px rgb(255, 255, 255, 0.72);
 	-webkit-text-fill-color: transparent;
     /* position: absolute; */
     top: 92px;
@@ -168,16 +168,16 @@ Today's info
 }
 .temperature {
     font-family: "GlacialIndifferenceBold", sans-serif;
-    font-size: 9.097%;
+    font-size: 131px;
     color: white;
-    text-shadow: rgba(0, 0, 0, 0.4) 0px 7.2px 2.125%;
+    text-shadow: rgba(0, 0, 0, 0.4) 0px 7.2px 30.6px;
 }
 .info {
     font-family: "GlacialIndifferenceBold", sans-serif;
-    font-size: 2.028%;
+    font-size: 29.2px;
     color: white;
     /* 802px */
-    text-shadow: rgba(0, 0, 0, 0.4) 0px 7.2px 2.125%;
+    text-shadow: rgba(0, 0, 0, 0.4) 0px 7.2px 30.6px;
 }
 /* 
 Multiple day rotatable display
