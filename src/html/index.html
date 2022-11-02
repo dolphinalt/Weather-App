@@ -26,9 +26,8 @@
                 <div class="nav" style="height: 110px;" id="nav">
                     <b style="width:34%;max-width:97.5%" id="searchFront"></b>
                     <input type="text" placeholder="Find Somewhere..." id="search" style="width:100%;">
-                    <button style="position: absolute; top: 60px; left: 38%; display: block;" id="locationButton">My Location</button>
-                    <button style="position: absolute; top: 60px; left: 50%; display: block;"  id="preferencesButton"> Preferences</button>
-                    <button style="position: absolute; top: 60px; left: 62%; display: block;"  id="creditsButton">Help</button>
+                    <button style="position: absolute; top: 60px; left: 38%; display: block;"  id="preferencesButton"> Preferences</button>
+                    <button style="position: absolute; top: 60px; left: 50%; display: block;"  id="creditsButton">Help</button> <!--was 62%-->
                     <button style="position: absolute; top: 60px; right: 2%; display: block; background: none; width: 2%; display: none;"  id="closeSearch">X</button>
                 </div>
             </div>
@@ -157,7 +156,6 @@
         //event.preventDefault();
         
         //Expand search bar and hide other elements in the way
-        document.getElementById("locationButton").style.display = "none";
         document.getElementById("preferencesButton").style.display = "none";
         document.getElementById("creditsButton").style.display = "none";
         document.getElementById("search").style.width = "1375px";
@@ -180,7 +178,6 @@
         event.preventDefault();
         
         //Reverse everything done by searching
-        document.getElementById("locationButton").style.display = "block";
         document.getElementById("preferencesButton").style.display = "block";
         document.getElementById("creditsButton").style.display = "block";
         document.getElementById("search").style.width = "375px";
@@ -203,7 +200,6 @@
             //Hide all other things in nav and expand preferences, also move preferences button to be centered
             document.getElementById("search").style.display = "none";
             document.getElementById("searchFront").style.display = "none";
-            document.getElementById("locationButton").style.display = "none";
             document.getElementById("creditsButton").style.display = "none";
             document.getElementById("preferencesButton").style.width = "1375px";
             document.getElementById("preferencesButton").style.left = "20px";
@@ -217,10 +213,9 @@
             //Show all other things in nav and put my location back
             document.getElementById("search").style.display = "block";
             document.getElementById("searchFront").style.display = "block";
-            document.getElementById("locationButton").style.display = "block";
             document.getElementById("creditsButton").style.display = "block";
             document.getElementById("preferencesButton").style.width = "125px";
-            document.getElementById("preferencesButton").style.left =  "50%";
+            document.getElementById("preferencesButton").style.left =  "38%";
             //Set nav bar to normal and set open as false
             document.getElementById("nav").style.height =  "110px";
             open = false;  
@@ -246,7 +241,6 @@
             //Hide all other things in nav and expand preferences, also move preferences button to be centered
             document.getElementById("search").style.display = "none";
             document.getElementById("searchFront").style.display = "none";
-            document.getElementById("locationButton").style.display = "none";
             document.getElementById("preferencesButton").style.display = "none";
             document.getElementById("creditsButton").style.width = "95.5%";
             document.getElementById("creditsButton").style.left = "1.389%";
@@ -260,10 +254,9 @@
             //Show all other things in nav and put my location back
             document.getElementById("search").style.display = "block";
             document.getElementById("searchFront").style.display = "block";
-            document.getElementById("locationButton").style.display = "block";
             document.getElementById("preferencesButton").style.display = "block";
             document.getElementById("creditsButton").style.width = "8.681%";
-            document.getElementById("creditsButton").style.left =  "62%";
+            document.getElementById("creditsButton").style.left =  "50%";
             //Set nav bar to normal and set open as false
             document.getElementById("nav").style.height =  "110px";
             open = false;
@@ -292,12 +285,10 @@
             //Manually do the other ones b/c they don't work that way 
             document.getElementById("search").style.display = "block";
             document.getElementById("searchFront").style.display = "block";
-            document.getElementById("locationButton").style.display = "block";
             document.getElementById("preferencesButton").style.display = "block";
             document.getElementById("creditsButton").style.width = "8.681%";
             document.getElementById("creditsButton").style.left =  "62%";
             document.getElementById("nav").style.height =  "110px";
-            document.getElementById("locationButton").style.display = "block";
             document.getElementById("creditsButton").style.display = "block";
             document.getElementById("preferencesButton").style.width = "8.681%";
             document.getElementById("preferencesButton").style.left =  "50%";
