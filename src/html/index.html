@@ -57,6 +57,10 @@
             </div>
 
             <!--Submenus-->
+            <!--Help Text-->
+            <div class="scrollable" id="creditsMenu" style="display: none;z-index:99999;">
+                <th>To find the weather of one of our cities, click on "Find Somewhere..." and choose a city. To see credits, click the "Credits" button.</th>
+            </div>
             <!--Searchbar-->
             <!-- Ok lets turn this into a CCS element instead of just a straight table -->
             <div class="scrollable" id="searchResults" style="display: none;z-index:99999;">
@@ -248,6 +252,8 @@
             //Expand nav bar and set as closed
             document.getElementById("nav").style.height =  "100%";
             open = true;
+            //Show stuff
+            document.getElementById("creditsMenu").style.display = "block";
         } else {
             //Close it
             //Show all other things in nav and put my location back
