@@ -93,17 +93,17 @@
                     <tr>
                         <td>Favorite temperature?</td>
                         <td><input id="favTemp" onchange="updatePreferenceText()" type="range" min="30" max="100" value="75" class="slider" style="width: 250px"><span id="favTempText">(75°F)</span></td>
-                        <td><input id="favTempImportance"  onchange="updatePreferenceText()" type="range" min="20" max="100" value="80" class="slider" style="width: 250px"><span id="favTempImportanceText">(80%)</span></td>
+                        <td><input id="favTempImportance"  onchange="updatePreferenceText()" type="range" min="20" max="100" value="80" class="slider" style="width: 250px"><span id="favTempImportanceText">(40%)</span></td>
                     </tr>
                     <tr>
                         <td>Importance of clear weather?</td>
                         <td><input id="favWeather" onchange="updatePreferenceText()" type="range" min="0" max="100" value="80" class="slider" style="width: 250px"><span id="favWeatherText">(80%)</span></td>
-                        <td><input id="favWeatherImportance" onchange="updatePreferenceText()" type="range" min="20" max="100" value="70" class="slider" style="width: 250px"><span id="favWeatherImportanceText">(70%)</span></td>
+                        <td><input id="favWeatherImportance" onchange="updatePreferenceText()" type="range" min="20" max="100" value="70" class="slider" style="width: 250px"><span id="favWeatherImportanceText">(35%)</span></td>
                     </tr>
                     <tr>
                         <td>Importance of uniform heat throughout day?</td>
                         <td><input id="favDifTemp" onchange="updatePreferenceText()" type="range" min="0" max="100" value="30" class="slider" style="width: 250px"><span id="favDifTempText">(30%)</span></td>
-                        <td><input id="favDifTempImportance" onchange="updatePreferenceText()" type="range" min="20" max="100" value="50" class="slider" style="width: 250px"><span id="favDifTempImportanceText">(50%)</span></td>
+                        <td><input id="favDifTempImportance" onchange="updatePreferenceText()" type="range" min="20" max="100" value="50" class="slider" style="width: 250px"><span id="favDifTempImportanceText">(25%)</span></td>
                     </tr>
                 </table>
             </div>
@@ -305,10 +305,12 @@ function updatePreferenceText() {
     document.getElementById("favTempText").textContent = "(" + document.getElementById("favTemp").value + "°F)"
     document.getElementById("favWeatherText").textContent = "(" + document.getElementById("favWeather").value + "%)"
     document.getElementById("favDifTempText").textContent = "(" + document.getElementById("favDifTemp").value + "%)"
-    document.getElementById("favTempImportanceText").textContent = "(" + document.getElementById("favTempImportance").value + "%)"
-    document.getElementById("favWeatherImportanceText").textContent = "(" + document.getElementById("favWeatherImportance").value + "%)"
-    document.getElementById("favDifTempImportanceText").textContent = "(" + document.getElementById("favDifTempImportance").value + "%)"
 
-    //TO-DO: Backend
+    //For these add up everything for it does not need to be done everytime to get precent
+    total = parseInt(document.getElementById("favTempImportance").value) + parseInt(document.getElementById("favWeatherImportance").value) + parseInt(document.getElementById("favDifTempImportance").value);
+    document.getElementById("favTempImportanceText").textContent = "(" + parseInt((parseInt(document.getElementById("favTempImportance").value)/total)*100) + "%)"
+    document.getElementById("favWeatherImportanceText").textContent = "(" + parseInt((parseInt(document.getElementById("favWeatherImportance").value)/total)*100) + "%)"
+    document.getElementById("favDifTempImportanceText").textContent = "(" + parseInt((parseInt(document.getElementById("favDifTempImportance").value)/total)*100) + "%)"
+
 }
 </script>
