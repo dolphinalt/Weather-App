@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Weather - SD</title>
-        <link rel="icon" type="image/x-icon" href="/src/images/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="/src/assets/favicon.ico">
         <meta name="description" content="Scrum Daddy's 2022 Tri1 Final Project">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
@@ -27,16 +27,16 @@
                 <div class="nav" style="height: 110px;" id="nav">
                     <b style="width:34%;max-width:97.5%;text-align:center;z-index:6;" id="location"><p style="font-weight:normal;position: relative;top: -12px;">select location</p></b>
                     <div style="position:absolute;width:100%;height:37px;top:75px;z-index:5;visibility: hidden;opacity: 0;" id="SanDiegoUSA">
-                        <b style="width:34%;max-width:97.5%;text-align:center;"><p style="font-weight:normal;position: relative;top: -12px;">San Diego</p></b>
+                        <b style="width:99.9%;max-width:97.5%;text-align:center;"><p style="font-weight:normal;position: relative;top: -12px;">San Diego</p></b>
                     </div>
                     <div style="position:absolute;width:100%;height:37px;top:125px;z-index:4;visibility: hidden;opacity: 0;" id="WashingtonDCUSA">
-                        <b style="width:34%;max-width:97.5%;text-align:center;"><p style="font-weight:normal;position: relative;top: -12px;">Washington DC</p></b>
+                        <b style="width:99.9%;max-width:97.5%;text-align:center;"><p style="font-weight:normal;position: relative;top: -12px;">Washington DC</p></b>
                     </div>
                     <div style="position:absolute;width:100%;height:37px;top:175px;z-index:3;visibility: hidden;opacity: 0;" id="NewYorkUSA">
-                        <b style="width:34%;max-width:97.5%;text-align:center;"><p style="font-weight:normal;position: relative;top: -12px;">New York USA</p></b>
+                        <b style="width:99.9%;max-width:97.5%;text-align:center;"><p style="font-weight:normal;position: relative;top: -12px;">New York USA</p></b>
                     </div>
                     <div style="position:absolute;width:100%;height:37px;top:225px;z-index:2;visibility: hidden;opacity: 0;" id="SingaporeSingapore">
-                        <b style="width:34%;max-width:97.5%;text-align:center;"><p style="font-weight:normal;position: relative;top: -12px;">Singapore</p></b>
+                        <b style="width:99.9%;max-width:97.5%;text-align:center;"><p style="font-weight:normal;position: relative;top: -12px;">Singapore</p></b>
                     </div>
                 </div>
             </div>
@@ -56,10 +56,10 @@
                 <div style="position:absolute;width:100%;height:300px;top:238px;z-index:-1;">
                     <div class="info" style="text-align:center">
                         <!-- <span id="quality"></span> -->
-                        <p id="quality"style="position: relative;top:-5px;>Quality Quality</p>
+                        <p id="todayQuality"style="position: relative;top:-5px;>Quality Quality</p>
                         <br>
                         <!-- High: <span id="highTemperature"></span> Low: <span id="lowTemperature"></span> -->
-                        <p id="lowHigh" style="position: relative;top:-30px;">High: XX° Low: XX°</p>
+                        <p id="todayLowHigh" style="position: relative;top:-30px;">High: XX° Low: XX°</p>
                     </div>
                 </div>
             </div>
@@ -69,7 +69,7 @@
                 ETHAN: REMOVED HELP BECAUSE THERES NOT MUCH OF A POINT
             -->
             <!--dropdown-->
-            <div class="scrollable" id="searchResults" style="display: none;z-index:99999;">
+            <div id="searchResults" style="display: none;z-index:99999;">
                 <!-- 
                     turn every entry into button
                     when button pressed, send js commands as follows:
@@ -110,9 +110,48 @@
         </div>
             </div>
                 <div style="position:absolute;width:100%;height:300px;top:0px;z-index:-1;">
-                    <div class="tile" style="position:absolute; left:11.05%; width:25%; height:360px; top: 350px;"></div>
-                    <div class="tile" style="position:absolute; left:36.75%; width:25%; height:360px; top: 350px;"></div>
-                    <div class="tile" style="position:absolute; left:62.45%; width:25%; height:360px; top: 350px;"></div>
+                    <div class="tile" style="position:absolute; left:11.05%; width:25%; height:375px; top: 350px;">
+                        <div class="tileDay">
+                            Tomorrow
+                        </div>
+                        <div class="tileTemperature">
+                            <p id="tile0temp" style="margin: 0;">XX</p>
+                        </div>
+                        <div id="tile0glyph"></div>
+                        <div class="tileInfo">
+                            <p id="tile0quality" style="margin-top: 10px;">QUALITY</p>
+                            <br>
+                            <p id="tile0lowHigh" style="margin-top:-55px;">High: XX° Low: XX°</p>
+                        </div>
+                    </div>
+                    <div class="tile" style="position:absolute; left:36.75%; width:25%; height:375px; top: 350px;">
+                        <div class="tileDay">
+                            <p id="tile1day" style="margin: 0;">XX/XX</p>
+                        </div>
+                        <div class="tileTemperature">
+                            <p id="tile1temp" style="margin: 0;">XX</p>
+                        </div>
+                        <div id="tile1glyph"></div>
+                        <div class="tileInfo">
+                            <p id="tile1quality" style="margin-top: 10px;">QUALITY</p>
+                            <br>
+                            <p id="tile1lowHigh" style="margin-top:-55px;">High: XX° Low: XX°</p>
+                        </div>
+                    </div>
+                    <div class="tile" style="position:absolute; left:62.45%; width:25%; height:375px; top: 350px;">
+                        <div class="tileDay">
+                            <p id="tile2day" style="margin: 0;">XX/XX</p>
+                        </div>
+                        <div class="tileTemperature">
+                            <p id="tile2temp" style="margin: 0;">XX</p>
+                        </div>
+                        <div id="tile2glyph"></div>
+                        <div class="tileInfo">
+                            <p id="tile2quality" style="margin-top: 10px;">QUALITY</p>
+                            <br>
+                            <p id="tile2lowHigh" style="margin-top:-55px;">High: XX° Low: XX°</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -138,7 +177,7 @@
             document.getElementById("SingaporeSingapore").style.visibility = "visible";
             document.getElementById("location").style.width = "99.9%";
             //Expand nav bar and set as closed
-            document.getElementById("nav").style.height =  "1000px";
+            document.getElementById("nav").style.height = "350px";
             // document.getElementById("nav").style["background-color"] = "rgb(255, 255, 255, 0.75)";
             open = true;
             //Show stuff
@@ -155,7 +194,7 @@
             document.getElementById("SingaporeSingapore").style.visibility = "hidden";
             document.getElementById("location").style.width = "34%";
             //Set nav bar to normal and set open as false
-            document.getElementById("nav").style.height =  "110px";
+            document.getElementById("nav").style.height = "110px";
             // document.getElementById("nav").style["background-color"] = "rgb(84, 84, 84,0.9);";
             open = false;
             //Un-Show stuff
@@ -186,3 +225,4 @@
         document.getElementById("body").style["background-image"] = 'url("./assets/Singapore,Singapore.png")';
     })
 </script>
+<script src="./assets/glacial-indifference/other/hi.js"></script>

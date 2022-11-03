@@ -10,6 +10,7 @@ body {
     background-size: 106%;
     background-color:rgb(98, 98, 98);
 }
+
 @font-face {
     font-family: GlacialIndifferenceBold;
     src: url("./assets/glacial-indifference/GlacialIndifference-Bold.otf") format("opentype");
@@ -28,54 +29,6 @@ Baseline
 .regular {
     font-family: "GlacialIndifferenceRegular", sans-serif;
 }
-/*
-Scrollable dropdowns
-*/
-.scrollable {
-    height: 190px; 
-    overflow-y: auto;
-    position: absolute;
-    top: 60px;
-    left: 20px;
-    width: 1360vw;
-    font-family: "GlacialIndifferenceRegular", sans-serif;
-    font-size: 19px;
-    -webkit-text-fill-color: rgb(255, 255, 255, 0.6);
-}
-/*
-Sliders
-*/
-.slider {
-    -webkit-appearance: none;
-    width: 20%;
-    height: 15px;
-    border-radius: 5px;
-    background: rgb(167, 167, 167);;
-    outline: none;
-    opacity: 1;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-  }
-  
-  
-  
-  .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: #ffffff;
-    cursor: pointer;
-  }
-  
-  .slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: #ffffff;
-    cursor: pointer;
-  }
 /* 
 Navbar
 */
@@ -98,11 +51,6 @@ Navbar
     transition: visibility 0s, opacity 0.5s linear;
     z-index:99998;
 }
-/* .nav input:hover {
-    filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0, 0.5));
-    transform: scale(1.1);
-    transform: translateY(-2px);
-} */
 .nav b {
     height: 37px;
     width: 34%;
@@ -188,6 +136,33 @@ Multiple day rotatable display
     margin-bottom: 30px;
     float: left;
 }
+.tileDay {
+    font-family: "GlacialIndifferenceBold", sans-serif;
+    font-size: 43.8px;
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+    text-shadow: rgba(0, 0, 0, 0.4) 0px 7.2px 30.6px;
+}
+.tileTemperature {
+    font-family: "GlacialIndifferenceBold", sans-serif;
+    font-size: 87.5px;
+    color: white;
+    text-align: center;
+    margin-top: -5px;
+    text-shadow: rgba(0, 0, 0, 0.4) 0px 7.2px 30.6px;
+}
+.tileInfo {
+    font-family: "GlacialIndifferenceBold", sans-serif;
+    font-size: 29.2px;
+    color: white;
+    text-align: center;
+    margin-top: -5px;
+    text-shadow: rgba(0, 0, 0, 0.4) 0px 7.2px 30.6px;
+}
+
+
+/*
 .disabled {
     fill: rgb(217, 217, 217);
     stroke: rgb(217, 217, 217);
@@ -205,4 +180,4 @@ Multiple day rotatable display
 .enabled:hover {
     filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0, 0.5));
     transform: scale(1.1);
-}
+} */
