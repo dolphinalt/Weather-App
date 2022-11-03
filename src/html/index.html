@@ -32,20 +32,20 @@
                 </div>
             </div>
             <div>
-                <div style="position:absolute;width:100%;height:300px;top:96px;z-index:-1;">
+                <div style="position:absolute;width:100%;height:300px;top:76px;z-index:-1;">
                     <div class="location" style="text-align:center">
                         <!-- <span id="location"></span> -->
                         
                         SAN DIEGO
                     </div>
                 </div>
-                <div style="position:absolute;width:100%;height:300px;top:117px;z-index:-1;">
+                <div style="position:absolute;width:100%;height:300px;top:97px;z-index:-1;">
                     <div class="temperature" style="text-align:center;">
                         <!-- <span id="temperature"></span> -->
                             74
                     </div>
                 </div>
-                <div style="position:absolute;width:100%;height:300px;top:258px;z-index:-1;">
+                <div style="position:absolute;width:100%;height:300px;top:238px;z-index:-1;">
                     <div class="info" style="text-align:center">
                         <!-- <span id="quality"></span> -->
                         Partially Cloudy
@@ -83,6 +83,9 @@
                     <tr>
                         <th>Las Vegas, Nevada, USA</th>
                     </tr>
+                    <tr>
+                        <th>Hell, Ohio, USA</th>
+                    </tr>
                 </table>
             </div>
 
@@ -119,11 +122,12 @@
             <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
             <!-- 238px from edge first one, 478px from top all --> 
             <!-- to confirm recent version -->
-            <div>
+        </div>
+            </div>
                 <div style="position:absolute;width:100%;height:300px;top:0px;z-index:-1;">
-                    <div class="tile" style="position:absolute; left:6.75%; top: 350px;"></div>
-                    <div class="tile" style="position:absolute; left:36.75%; top: 350px;"></div>
-                    <div class="tile" style="position:absolute; left:66.75%; top: 350px;"></div>
+                    <div class="tile" style="position:absolute; left:11.05%; width:25%; height:360px; top: 350px;"></div>
+                    <div class="tile" style="position:absolute; left:36.75%; width:25%; height:360px; top: 350px;"></div>
+                    <div class="tile" style="position:absolute; left:62.45%; width:25%; height:360px; top: 350px;"></div>
                 </div>
             </div>
         </div>
@@ -142,8 +146,8 @@
         //Expand search bar and hide other elements in the way
         document.getElementById("preferencesButton").style.display = "none";
         document.getElementById("creditsButton").style.display = "none";
-        document.getElementById("search").style.width = "1375px";
-        document.getElementById("searchFront").style.width = "1400px";
+        document.getElementById("search").style.width = "95.5%";
+        document.getElementById("searchFront").style.width = "97.2px";
 
         //Expand the nav bar, show X button and show results holder
         document.getElementById("nav").style.height =  "80%";
@@ -152,7 +156,7 @@
         //TO-DO: Backend
     });
 </script>
-
+    
 <!--Search X button code-->
 
 <script>
@@ -162,6 +166,26 @@
         event.preventDefault();
         
         //Reverse everything done by searching
+        document.getElementById("preferencesButton").style.display = "block";
+        document.getElementById("creditsButton").style.display = "block";
+        document.getElementById("search").style.width = "375px";
+        document.getElementById("searchFront").style.width = "400px";
+        document.getElementById("nav").style.height =   "110px";
+        document.getElementById("closeSearch").style.display =  "none";
+        document.getElementById("searchResults").style.display =  "none";
+    });
+</script>
+
+<!--Daily info button-->>
+
+<script>
+    var button = document.getElementById("dailyInfo");
+    //When stop button is clicked
+    button.addEventListener("click", function(event) {
+        event.preventDefault();
+        
+        //Reverse everything done by searching
+        document.getElementById("locationButton").style.display = "block";
         document.getElementById("preferencesButton").style.display = "block";
         document.getElementById("creditsButton").style.display = "block";
         document.getElementById("search").style.width = "375px";
@@ -185,8 +209,8 @@
             document.getElementById("search").style.display = "none";
             document.getElementById("searchFront").style.display = "none";
             document.getElementById("creditsButton").style.display = "none";
-            document.getElementById("preferencesButton").style.width = "1375px";
-            document.getElementById("preferencesButton").style.left = "20px";
+            document.getElementById("preferencesButton").style.width = "95.5%";
+            document.getElementById("preferencesButton").style.left = "1.389%";
             //Expand nav bar and set as closed
             document.getElementById("nav").style.height =  "80%";
             open = true;
@@ -198,8 +222,8 @@
             document.getElementById("search").style.display = "block";
             document.getElementById("searchFront").style.display = "block";
             document.getElementById("creditsButton").style.display = "block";
-            document.getElementById("preferencesButton").style.width = "125px";
-            document.getElementById("preferencesButton").style.left =  "38%";
+            document.getElementById("preferencesButton").style.width = "8.681%";
+            document.getElementById("preferencesButton").style.left =  "50%";
             //Set nav bar to normal and set open as false
             document.getElementById("nav").style.height =  "110px";
             open = false;  
