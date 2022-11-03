@@ -41,7 +41,6 @@ Scrollable dropdowns
     font-family: "GlacialIndifferenceRegular", sans-serif;
     font-size: 19px;
     -webkit-text-fill-color: rgb(255, 255, 255, 0.6);
-
 }
 /*
 Sliders
@@ -96,32 +95,14 @@ Navbar
     font-size: 19px;
     color: rgb(167, 167, 167);
     transition: all 300ms ease-out 0ms;
+    transition: visibility 0s, opacity 0.5s linear;
     z-index:99998;
-}
-.nav input[type=text] {
-    font-family: "GlacialIndifferenceRegular", sans-serif;
-    border: none;
-    outline: none;
-    height: 35px;
-    width: 335px;
-    font-size: 19px;
-    color: rgb(84, 84, 84);
-    background-color: transparent;
-    position: absolute;
-    top: 60px;
-    left: 33px;
-    transition: filter 300ms ease-out 0ms;
-    transition: transform 300ms ease-out 0ms;
 }
 /* .nav input:hover {
     filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0, 0.5));
     transform: scale(1.1);
     transform: translateY(-2px);
 } */
-::placeholder {
-    font-family: "GlacialIndifferenceRegular", sans-serif;
-    color: rgb(167, 167, 167);
-}
 .nav b {
     height: 37px;
     width: 34%;
@@ -131,8 +112,24 @@ Navbar
     position: absolute;
     top: 60px;
     left: 15px;
-    transition: filter 300ms ease-out 0ms;
-    transition: transform 300ms ease-out 0ms;
+    transition: all 300ms ease-out 0ms;
+}
+.SanDiegoUSA {
+    transition: all 300ms ease-out 0ms;
+}
+.WashingtonDCUSA {
+    transition: all 300ms ease-out 0ms;
+}
+.NewYorkUSA {
+    transition: all 300ms ease-out 0ms;
+}
+.SingaporeSingapore {
+    transition: all 300ms ease-out 0ms;
+}
+.nav b:hover {
+    filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0, 0.5));
+    transform: scale(1.1);
+    transform: translateY(-2px);
 }
 .nav button {
     font-family: "GlacialIndifferenceRegular", sans-serif;

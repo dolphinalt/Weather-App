@@ -21,15 +21,23 @@
             document.body.style.transform = "scale(" + percent + "%)"
         }
     </script>
-    <body style="scale: 100%;">
+    <body style="scale: 100%;" onload='main("San,Diego,USA")'>
         <div style="scale: 100vw">
             <div style="position:absolute;width:100%;height:300px;z-index:1;">
                 <div class="nav" style="height: 110px;" id="nav">
-                    <b style="width:34%;max-width:97.5%" id="searchFront"></b>
-                    <input type="text" placeholder="Find Somewhere..." id="search" style="width:100%;">
-                    <button style="position: absolute; top: 60px; left: 38%; display: block;"  id="preferencesButton"> Preferences</button>
-                    <button style="position: absolute; top: 60px; left: 50%; display: block;"  id="creditsButton">Help</button> <!--was 62%-->
-                    <button style="position: absolute; top: 60px; right: 2%; display: block; background: none; width: 2%; display: none;"  id="closeSearch">X</button>
+                    <b style="width:34%;max-width:97.5%;text-align:center;z-index:6;" id="location"><p style="font-weight:normal;position: relative;top: -12px;">select location</p></b>
+                    <div style="position:absolute;width:100%;height:37px;top:75px;z-index:5;visibility: hidden;opacity: 0;" id="SanDiegoUSA">
+                        <b style="width:34%;max-width:97.5%;text-align:center;"><p style="font-weight:normal;position: relative;top: -12px;">San Diego</p></b>
+                    </div>
+                    <div style="position:absolute;width:100%;height:37px;top:125px;z-index:4;visibility: hidden;opacity: 0;" id="WashingtonDCUSA">
+                        <b style="width:34%;max-width:97.5%;text-align:center;"><p style="font-weight:normal;position: relative;top: -12px;">Washington DC</p></b>
+                    </div>
+                    <div style="position:absolute;width:100%;height:37px;top:175px;z-index:3;visibility: hidden;opacity: 0;" id="NewYorkUSA">
+                        <b style="width:34%;max-width:97.5%;text-align:center;"><p style="font-weight:normal;position: relative;top: -12px;">New York USA</p></b>
+                    </div>
+                    <div style="position:absolute;width:100%;height:37px;top:225px;z-index:2;visibility: hidden;opacity: 0;" id="SingaporeSingapore">
+                        <b style="width:34%;max-width:97.5%;text-align:center;"><p style="font-weight:normal;position: relative;top: -12px;">Singapore</p></b>
+                    </div>
                 </div>
             </div>
             <div>
@@ -48,21 +56,19 @@
                 <div style="position:absolute;width:100%;height:300px;top:238px;z-index:-1;">
                     <div class="info" style="text-align:center">
                         <!-- <span id="quality"></span> -->
-                        <p id="quality"style="position: relative;top:-20px;>Quality Quality</p>
+                        <p id="quality"style="position: relative;top:-5px;>Quality Quality</p>
                         <br>
                         <!-- High: <span id="highTemperature"></span> Low: <span id="lowTemperature"></span> -->
-                        <p id="lowHigh" style="position: relative;top:-50px;">High: XX° Low: XX°</p>
+                        <p id="lowHigh" style="position: relative;top:-30px;">High: XX° Low: XX°</p>
                     </div>
                 </div>
             </div>
 
             <!--Submenus-->
-            <!--Help Text-->
-            <div class="scrollable" id="creditsMenu" style="display: none;z-index:99999;">
-                <th>To find the weather of one of our cities, click on "Find Somewhere..." and choose a city.</th>
-            </div>
-            <!--Searchbar-->
-            <!-- Ok lets turn this into a CCS element instead of just a straight table -->
+            <!--Help Text 
+                ETHAN: REMOVED HELP BECAUSE THERES NOT MUCH OF A POINT
+            -->
+            <!--dropdown-->
             <div class="scrollable" id="searchResults" style="display: none;z-index:99999;">
                 <!-- 
                     turn every entry into button
@@ -70,7 +76,7 @@
                     ```js
                     registerLocation(San,Diego,USA)
                     registerLocation(Washington,DC,USA)
-                    registerLocation(New,York,USA)
+                    registerLocation(New,York,New,York,USA)
                     registerLocation(Singapore,Singapore)
                     ```
                  -->
@@ -93,31 +99,6 @@
                 </table>
             </div>
 
-            <!--Preferences-->
-            <div class="scrollable" id="preferencesMenu" style="display: none; z-index:999999;">
-                <table>
-                    <tr>
-                        <th>Question</th>
-                        <th>Answer</th>
-                        <th>Weight of Answer</th>
-                    </tr>
-                    <tr>
-                        <td>Favorite temperature?</td>
-                        <td><input id="favTemp" onchange="updatePreferenceText()" type="range" min="30" max="100" value="75" class="slider" style="width: 65%"><span id="favTempText">(75°F)</span></td>
-                        <td><input id="favTempImportance"  onchange="updatePreferenceText()" type="range" min="20" max="100" value="80" class="slider" style="width: 65%"><span id="favTempImportanceText">(40%)</span></td>
-                    </tr>
-                    <tr>
-                        <td>Importance of clear weather?</td>
-                        <td><input id="favWeather" onchange="updatePreferenceText()" type="range" min="0" max="100" value="80" class="slider" style="width: 65%"><span id="favWeatherText">(80%)</span></td>
-                        <td><input id="favWeatherImportance" onchange="updatePreferenceText()" type="range" min="20" max="100" value="70" class="slider" style="width: 65%"><span id="favWeatherImportanceText">(35%)</span></td>
-                    </tr>
-                    <tr>
-                        <td>Importance of uniform heat throughout day?</td>
-                        <td><input id="favDifTemp" onchange="updatePreferenceText()" type="range" min="0" max="100" value="30" class="slider" style="width: 65%"><span id="favDifTempText">(30%)</span></td>
-                        <td><input id="favDifTempImportance" onchange="updatePreferenceText()" type="range" min="20" max="100" value="50" class="slider" style="width: 65%"><span id="favDifTempImportanceText">(25%)</span></td>
-                    </tr>
-                </table>
-            </div>
             <!--<div style="display: none" id="among">
                 <audio controls>
                     <source src="among.mp3" type="audio/mpeg" id="among2">
@@ -138,191 +119,66 @@
     </body>
 </html>
 
-<!--Search button code-->
+<!--location selector-->
 
 <script>
-    var input = document.getElementById("search");
-    //When enter is clicked...
-    input.addEventListener("keypress", function(event) {
-    
-        //event.preventDefault();
-        
-        //Expand search bar and hide other elements in the way
-        document.getElementById("preferencesButton").style.display = "none";
-        document.getElementById("creditsButton").style.display = "none";
-        document.getElementById("search").style.width = "95.5%";
-        document.getElementById("searchFront").style.width = "97.2px";
-
-        //Expand the nav bar, show X button and show results holder
-        document.getElementById("nav").style.height =  "80%";
-        document.getElementById("closeSearch").style.display =  "block";
-        document.getElementById("searchResults").style.display =  "block";
-        //TO-DO: Backend
-    });
-</script>
-    
-<!--Search X button code-->
-
-<script>
-    var button = document.getElementById("closeSearch");
-    //When stop button is clicked
-    button.addEventListener("click", function(event) {
-        event.preventDefault();
-        
-        //Reverse everything done by searching
-        document.getElementById("preferencesButton").style.display = "block";
-        document.getElementById("creditsButton").style.display = "block";
-        document.getElementById("search").style.width = "375px";
-        document.getElementById("searchFront").style.width = "400px";
-        document.getElementById("nav").style.height =   "110px";
-        document.getElementById("closeSearch").style.display =  "none";
-        document.getElementById("searchResults").style.display =  "none";
-    });
-</script>
-
-<!--Daily info button-->>
-
-<script>
-    var button = document.getElementById("dailyInfo");
-    //When stop button is clicked
-    button.addEventListener("click", function(event) {
-        event.preventDefault();
-        
-        //Reverse everything done by searching
-        document.getElementById("locationButton").style.display = "block";
-        document.getElementById("preferencesButton").style.display = "block";
-        document.getElementById("creditsButton").style.display = "block";
-        document.getElementById("search").style.width = "375px";
-        document.getElementById("searchFront").style.width = "400px";
-        document.getElementById("nav").style.height =   "110px";
-        document.getElementById("closeSearch").style.display =  "none";
-        document.getElementById("searchResults").style.display =  "none";
-    });
-</script>
-
-<!--Preferences button-->
-
-<script>
-    var button = document.getElementById("preferencesButton");
+    var button = document.getElementById("location");
     open = false;
     button.addEventListener("click", function(event) {
         //Is the menu already open?
         if(!open) {
             //Open it
-            //Hide all other things in nav and expand preferences, also move preferences button to be centered
-            document.getElementById("search").style.display = "none";
-            document.getElementById("searchFront").style.display = "none";
-            document.getElementById("creditsButton").style.display = "none";
-            document.getElementById("preferencesButton").style.width = "95.5%";
-            document.getElementById("preferencesButton").style.left = "1.389%";
+            document.getElementById("SanDiegoUSA").style.opacity = "1";
+            document.getElementById("WashingtonDCUSA").style.opacity = "1";
+            document.getElementById("NewYorkUSA").style.opacity = "1";
+            document.getElementById("SingaporeSingapore").style.opacity = "1";
+            document.getElementById("SanDiegoUSA").style.visibility = "visible";
+            document.getElementById("WashingtonDCUSA").style.visibility = "visible";
+            document.getElementById("NewYorkUSA").style.visibility = "visible";
+            document.getElementById("SingaporeSingapore").style.visibility = "visible";
+            document.getElementById("location").style.width = "99.9%";
             //Expand nav bar and set as closed
-            document.getElementById("nav").style.height =  "80%";
+            document.getElementById("nav").style.height =  "1000px";
+            // document.getElementById("nav").style["background-color"] = "rgb(255, 255, 255, 0.75)";
             open = true;
             //Show stuff
-            document.getElementById("preferencesMenu").style.display = "block";
         } else {
             //Close it
             //Show all other things in nav and put my location back
-            document.getElementById("search").style.display = "block";
-            document.getElementById("searchFront").style.display = "block";
-            document.getElementById("creditsButton").style.display = "block";
-            document.getElementById("preferencesButton").style.width = "8.681%";
-            document.getElementById("preferencesButton").style.left =  "50%";
+            document.getElementById("SanDiegoUSA").style.opacity = "0";
+            document.getElementById("WashingtonDCUSA").style.opacity = "0";
+            document.getElementById("NewYorkUSA").style.opacity = "0";
+            document.getElementById("SingaporeSingapore").style.opacity = "0";
+            document.getElementById("SanDiegoUSA").style.visibility = "hidden";
+            document.getElementById("WashingtonDCUSA").style.visibility = "hidden";
+            document.getElementById("NewYorkUSA").style.visibility = "hidden";
+            document.getElementById("SingaporeSingapore").style.visibility = "hidden";
+            document.getElementById("location").style.width = "34%";
             //Set nav bar to normal and set open as false
             document.getElementById("nav").style.height =  "110px";
-            open = false;  
-            //Un-Show stuff
-            document.getElementById("preferencesMenu").style.display = "None";
-            
-        }
-        function getOpenPreferences() {   
-            return open;
-         }  
-    });
-</script>
-
-<!--Help(credits) button-->
-
-<script>
-    var button = document.getElementById("creditsButton");
-    open = false;
-    button.addEventListener("click", function(event) {
-        //Is the menu already open?
-        if(!open) {
-            //Open it
-            //Hide all other things in nav and expand preferences, also move preferences button to be centered
-            document.getElementById("search").style.display = "none";
-            document.getElementById("searchFront").style.display = "none";
-            document.getElementById("preferencesButton").style.display = "none";
-            document.getElementById("creditsButton").style.width = "95.5%";
-            document.getElementById("creditsButton").style.left = "1.389%";
-            //Expand nav bar and set as closed
-            document.getElementById("nav").style.height =  "100%";
-            open = true;
-            //Show stuff
-            document.getElementById("creditsMenu").style.display = "block";
-        } else {
-            //Close it
-            //Show all other things in nav and put my location back
-            document.getElementById("search").style.display = "block";
-            document.getElementById("searchFront").style.display = "block";
-            document.getElementById("preferencesButton").style.display = "block";
-            document.getElementById("creditsButton").style.width = "8.681%";
-            document.getElementById("creditsButton").style.left =  "50%";
-            //Set nav bar to normal and set open as false
-            document.getElementById("nav").style.height =  "110px";
+            // document.getElementById("nav").style["background-color"] = "rgb(84, 84, 84,0.9);";
             open = false;
             //Un-Show stuff
-            document.getElementById("creditsMenu").style.display = "None";
-        }
-        function getOpenCredits() {   
-            return open;
-         }  
-    });
-</script>
-
-<!--Typing esc closes menus-->
-<script>
-    // BTW THIS DOESN'T WORK
-    this.addEventListener("keypress", function(event) {
-        //Save all close menu button
-        var closeSearch = document.getElementById("closeSearch");
-
-
-        //If esc is pressed...
-        if (event.keyCode == 27) {
-            //Press the search button
-            closeSearch.click();
-
-            //Manually do the other ones b/c they don't work that way 
-            document.getElementById("search").style.display = "block";
-            document.getElementById("searchFront").style.display = "block";
-            document.getElementById("preferencesButton").style.display = "block";
-            document.getElementById("creditsButton").style.width = "8.681%";
-            document.getElementById("creditsButton").style.left =  "62%";
-            document.getElementById("nav").style.height =  "110px";
-            document.getElementById("creditsButton").style.display = "block";
-            document.getElementById("preferencesButton").style.width = "8.681%";
-            document.getElementById("preferencesButton").style.left =  "50%";
-            document.getElementById("preferencesMenu").style.display = "None";
         }
     });
-</script>
-
-<!--Preferences scrollable objects when changed update calculation and text next to them-->
-
-<script>
-function updatePreferenceText() {
-    //When any slider is updated just update them all to be lazy
-    document.getElementById("favTempText").textContent = "(" + document.getElementById("favTemp").value + "°F)"
-    document.getElementById("favWeatherText").textContent = "(" + document.getElementById("favWeather").value + "%)"
-    document.getElementById("favDifTempText").textContent = "(" + document.getElementById("favDifTemp").value + "%)"
-
-    //For these add up everything for it does not need to be done everytime to get precent
-    total = parseInt(document.getElementById("favTempImportance").value) + parseInt(document.getElementById("favWeatherImportance").value) + parseInt(document.getElementById("favDifTempImportance").value);
-    document.getElementById("favTempImportanceText").textContent = "(" + parseInt((parseInt(document.getElementById("favTempImportance").value)/total)*100) + "%)"
-    document.getElementById("favWeatherImportanceText").textContent = "(" + parseInt((parseInt(document.getElementById("favWeatherImportance").value)/total)*100) + "%)"
-    document.getElementById("favDifTempImportanceText").textContent = "(" + parseInt((parseInt(document.getElementById("favDifTempImportance").value)/total)*100) + "%)"
-
-}
+    var button = document.getElementById("SanDiegoUSA");
+    open = false;
+    button.addEventListener("click", function(event) {
+        main("San,Diego,USA")
+    })
+    var button = document.getElementById("WashingtonDCUSA");
+    open = false;
+    button.addEventListener("click", function(event) {
+        main("Washington,DC,USA")
+    })
+    var button = document.getElementById("NewYorkUSA");
+    open = false;
+    button.addEventListener("click", function(event) {
+        main("New,York,New,York,USA")
+    })
+    var button = document.getElementById("SingaporeSingapore");
+    open = false;
+    button.addEventListener("click", function(event) {
+        main("Singapore,Singapore")
+    })
 </script>
