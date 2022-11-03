@@ -158,8 +158,8 @@ Today's info
     font-family: "GlacialIndifferenceBold", sans-serif;
     font-size: 131px;
     text-align: center;
-    caret-color: rgb(255, 255, 255, 0.72);
-	-webkit-text-stroke: 6px rgb(255, 255, 255, 0.72);
+    caret-color: rgb(255, 255, 255, 0.8);
+	-webkit-text-stroke: 6px rgb(255, 255, 255, 0.8);
 	-webkit-text-fill-color: transparent;
     /* position: absolute; */
     top: 92px;
