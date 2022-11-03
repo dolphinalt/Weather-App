@@ -6,7 +6,7 @@ import json
 
 url = "https://visual-crossing-weather.p.rapidapi.com/forecast"
 
-querystring = {"aggregateHours":"24","location":"Washington,DC,USA","contentType":"json","unitGroup":"us","shortColumnNames":"0"}
+querystring = {"aggregateHours":"24","location":"San,Diego,USA","contentType":"json","unitGroup":"us","shortColumnNames":"0"}
 
 headers = {
 	"X-RapidAPI-Key": "eb0bbc6cc0msh085b254f1761bc2p154cf4jsne59a8dbdbaa0",
@@ -15,10 +15,10 @@ headers = {
 
 response = requests.request("GET", url, headers=headers, params=querystring)
 weatherData=response.text
+print(weatherData)
 
 # JSON conversion for client
 weatherDataJson=json.dumps(weatherData)
-serverWeatherData=bytes(weatherDataJson, 'utf-8')
 print(f"[i] Data is {len(weatherDataJson.encode('utf-8'))} bytes")
 
 # server section

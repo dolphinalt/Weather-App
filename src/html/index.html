@@ -10,17 +10,18 @@
         <script src="./../main.js"></script>
     </head>
     <!-- resize code -->
+    <script>
+        window.onresize = resize;
+        function resize() {
+            var sourceSize = 1440;
+            var currentSize = window.innerWidth;
+            console.log(currentSize)
+            var resize = currentSize/sourceSize;
+            var percent = resize*100;
+            document.body.style.transform = "scale(" + percent + "%)"
+        }
+    </script>
     <body style="scale: 100%;">
-        <script>
-            window.onresize = resize;
-            function resize() {
-                var sourceSize = 1440;
-                var currentSize = window.innerWidth;
-                var resize = currentSize/sourceSize;
-                var percent = resize*100;
-                document.body.style.transform = "scale(" + percent + "%)"
-            }
-        </script>
         <div style="scale: 100vw">
             <div style="position:absolute;width:100%;height:300px;z-index:1;">
                 <div class="nav" style="height: 110px;" id="nav">
@@ -32,26 +33,25 @@
                 </div>
             </div>
             <div>
-                <div style="position:absolute;width:100%;height:300px;top:96px;z-index:-1;">
+                <div style="position:absolute;width:100%;height:300px;top:-25px;z-index:-1;">
                     <div class="location" style="text-align:center">
                         <!-- <span id="location"></span> -->
-                        
-                        SAN DIEGO
+                        <p id="place">LOCATION</p>
                     </div>
                 </div>
-                <div style="position:absolute;width:100%;height:300px;top:117px;z-index:-1;">
+                <div style="position:absolute;width:100%;height:300px;top:0px;z-index:-1;">
                     <div class="temperature" style="text-align:center;">
                         <!-- <span id="temperature"></span> -->
-                            74
+                            <p id="todayTemperature">XX</p>
                     </div>
                 </div>
                 <div style="position:absolute;width:100%;height:300px;top:258px;z-index:-1;">
                     <div class="info" style="text-align:center">
                         <!-- <span id="quality"></span> -->
-                        Partially Cloudy
+                        <p id="quality"style="position: relative;top:-20px;>Quality Quality</p>
                         <br>
                         <!-- High: <span id="highTemperature"></span> Low: <span id="lowTemperature"></span> -->
-                        High: 78° Low: 72°
+                        <p id="lowHigh" style="position: relative;top:-50px;">High: XX° Low: XX°</p>
                     </div>
                 </div>
             </div>
@@ -64,6 +64,16 @@
             <!--Searchbar-->
             <!-- Ok lets turn this into a CCS element instead of just a straight table -->
             <div class="scrollable" id="searchResults" style="display: none;z-index:99999;">
+                <!-- 
+                    turn every entry into button
+                    when button pressed, send js commands as follows:
+                    ```js
+                    registerLocation(San,Diego,USA)
+                    registerLocation(Washington,DC,USA)
+                    registerLocation(New,York,USA)
+                    registerLocation(Singapore,Singapore)
+                    ```
+                 -->
                 <table>
                     <tr>
                         <th>Search Results:</th>
@@ -78,10 +88,7 @@
                         <th>New York, USA</th>
                     </tr>
                     <tr>
-                        <th>Detroit, Michigan, USA</th>
-                    </tr>
-                    <tr>
-                        <th>Las Vegas, Nevada, USA</th>
+                        <th>Singapore, Singapore</th>
                     </tr>
                 </table>
             </div>
