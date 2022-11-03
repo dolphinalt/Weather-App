@@ -26,9 +26,8 @@
                 <div class="nav" style="height: 110px;" id="nav">
                     <b style="width:34%;max-width:97.5%" id="searchFront"></b>
                     <input type="text" placeholder="Find Somewhere..." id="search" style="width:100%;">
-                    <button style="position: absolute; top: 60px; left: 38%; display: block;" id="locationButton">My Location</button>
-                    <button style="position: absolute; top: 60px; left: 50%; display: block;"  id="preferencesButton"> Preferences</button>
-                    <button style="position: absolute; top: 60px; left: 62%; display: block;"  id="creditsButton">Credits</button>
+                    <button style="position: absolute; top: 60px; left: 38%; display: block;"  id="preferencesButton"> Preferences</button>
+                    <button style="position: absolute; top: 60px; left: 50%; display: block;"  id="creditsButton">Help</button> <!--was 62%-->
                     <button style="position: absolute; top: 60px; right: 2%; display: block; background: none; width: 2%; display: none;"  id="closeSearch">X</button>
                 </div>
             </div>
@@ -36,6 +35,7 @@
                 <div style="position:absolute;width:100%;height:300px;top:96px;z-index:-1;">
                     <div class="location" style="text-align:center">
                         <!-- <span id="location"></span> -->
+                        
                         SAN DIEGO
                     </div>
                 </div>
@@ -57,6 +57,10 @@
             </div>
 
             <!--Submenus-->
+            <!--Help Text-->
+            <div class="scrollable" id="creditsMenu" style="display: none;z-index:99999;">
+                <th>To find the weather of one of our cities, click on "Find Somewhere..." and choose a city.</th>
+            </div>
             <!--Searchbar-->
             <!-- Ok lets turn this into a CCS element instead of just a straight table -->
             <div class="scrollable" id="searchResults" style="display: none;z-index:99999;">
@@ -74,7 +78,7 @@
                         <th>New York, USA</th>
                     </tr>
                     <tr>
-                        <th>Detrot, Michigan, USA</th>
+                        <th>Detroit, Michigan, USA</th>
                     </tr>
                     <tr>
                         <th>Las Vegas, Nevada, USA</th>
@@ -92,18 +96,18 @@
                     </tr>
                     <tr>
                         <td>Favorite temperature?</td>
-                        <td><input id="favTemp" onchange="updatePreferenceText()" type="range" min="30" max="100" value="75" class="slider" style="width: 250px"><span id="favTempText">(75°F)</span></td>
-                        <td><input id="favTempImportance"  onchange="updatePreferenceText()" type="range" min="20" max="100" value="80" class="slider" style="width: 250px"><span id="favTempImportanceText">(80%)</span></td>
+                        <td><input id="favTemp" onchange="updatePreferenceText()" type="range" min="30" max="100" value="75" class="slider" style="width: 65%"><span id="favTempText">(75°F)</span></td>
+                        <td><input id="favTempImportance"  onchange="updatePreferenceText()" type="range" min="20" max="100" value="80" class="slider" style="width: 65%"><span id="favTempImportanceText">(40%)</span></td>
                     </tr>
                     <tr>
                         <td>Importance of clear weather?</td>
-                        <td><input id="favWeather" onchange="updatePreferenceText()" type="range" min="0" max="100" value="80" class="slider" style="width: 250px"><span id="favWeatherText">(80%)</span></td>
-                        <td><input id="favWeatherImportance" onchange="updatePreferenceText()" type="range" min="20" max="100" value="70" class="slider" style="width: 250px"><span id="favWeatherImportanceText">(70%)</span></td>
+                        <td><input id="favWeather" onchange="updatePreferenceText()" type="range" min="0" max="100" value="80" class="slider" style="width: 65%"><span id="favWeatherText">(80%)</span></td>
+                        <td><input id="favWeatherImportance" onchange="updatePreferenceText()" type="range" min="20" max="100" value="70" class="slider" style="width: 65%"><span id="favWeatherImportanceText">(35%)</span></td>
                     </tr>
                     <tr>
                         <td>Importance of uniform heat throughout day?</td>
-                        <td><input id="favDifTemp" onchange="updatePreferenceText()" type="range" min="0" max="100" value="30" class="slider" style="width: 250px"><span id="favDifTempText">(30%)</span></td>
-                        <td><input id="favDifTempImportance" onchange="updatePreferenceText()" type="range" min="20" max="100" value="50" class="slider" style="width: 250px"><span id="favDifTempImportanceText">(50%)</span></td>
+                        <td><input id="favDifTemp" onchange="updatePreferenceText()" type="range" min="0" max="100" value="30" class="slider" style="width: 65%"><span id="favDifTempText">(30%)</span></td>
+                        <td><input id="favDifTempImportance" onchange="updatePreferenceText()" type="range" min="20" max="100" value="50" class="slider" style="width: 65%"><span id="favDifTempImportanceText">(25%)</span></td>
                     </tr>
                 </table>
             </div>
@@ -152,7 +156,6 @@
         //event.preventDefault();
         
         //Expand search bar and hide other elements in the way
-        document.getElementById("locationButton").style.display = "none";
         document.getElementById("preferencesButton").style.display = "none";
         document.getElementById("creditsButton").style.display = "none";
         document.getElementById("search").style.width = "1375px";
@@ -175,7 +178,6 @@
         event.preventDefault();
         
         //Reverse everything done by searching
-        document.getElementById("locationButton").style.display = "block";
         document.getElementById("preferencesButton").style.display = "block";
         document.getElementById("creditsButton").style.display = "block";
         document.getElementById("search").style.width = "375px";
@@ -198,7 +200,6 @@
             //Hide all other things in nav and expand preferences, also move preferences button to be centered
             document.getElementById("search").style.display = "none";
             document.getElementById("searchFront").style.display = "none";
-            document.getElementById("locationButton").style.display = "none";
             document.getElementById("creditsButton").style.display = "none";
             document.getElementById("preferencesButton").style.width = "1375px";
             document.getElementById("preferencesButton").style.left = "20px";
@@ -212,10 +213,9 @@
             //Show all other things in nav and put my location back
             document.getElementById("search").style.display = "block";
             document.getElementById("searchFront").style.display = "block";
-            document.getElementById("locationButton").style.display = "block";
             document.getElementById("creditsButton").style.display = "block";
             document.getElementById("preferencesButton").style.width = "125px";
-            document.getElementById("preferencesButton").style.left =  "620px";
+            document.getElementById("preferencesButton").style.left =  "38%";
             //Set nav bar to normal and set open as false
             document.getElementById("nav").style.height =  "110px";
             open = false;  
@@ -229,7 +229,7 @@
     });
 </script>
 
-<!--Credits button-->
+<!--Help(credits) button-->
 
 <script>
     var button = document.getElementById("creditsButton");
@@ -241,25 +241,27 @@
             //Hide all other things in nav and expand preferences, also move preferences button to be centered
             document.getElementById("search").style.display = "none";
             document.getElementById("searchFront").style.display = "none";
-            document.getElementById("locationButton").style.display = "none";
             document.getElementById("preferencesButton").style.display = "none";
-            document.getElementById("creditsButton").style.width = "1375px";
-            document.getElementById("creditsButton").style.left = "20px";
+            document.getElementById("creditsButton").style.width = "95.5%";
+            document.getElementById("creditsButton").style.left = "1.389%";
             //Expand nav bar and set as closed
             document.getElementById("nav").style.height =  "100%";
             open = true;
+            //Show stuff
+            document.getElementById("creditsMenu").style.display = "block";
         } else {
             //Close it
             //Show all other things in nav and put my location back
             document.getElementById("search").style.display = "block";
             document.getElementById("searchFront").style.display = "block";
-            document.getElementById("locationButton").style.display = "block";
             document.getElementById("preferencesButton").style.display = "block";
-            document.getElementById("creditsButton").style.width = "125px";
-            document.getElementById("creditsButton").style.left =  "770px";
+            document.getElementById("creditsButton").style.width = "8.681%";
+            document.getElementById("creditsButton").style.left =  "50%";
             //Set nav bar to normal and set open as false
             document.getElementById("nav").style.height =  "110px";
             open = false;
+            //Un-Show stuff
+            document.getElementById("creditsMenu").style.display = "None";
         }
         function getOpenCredits() {   
             return open;
@@ -283,15 +285,13 @@
             //Manually do the other ones b/c they don't work that way 
             document.getElementById("search").style.display = "block";
             document.getElementById("searchFront").style.display = "block";
-            document.getElementById("locationButton").style.display = "block";
             document.getElementById("preferencesButton").style.display = "block";
-            document.getElementById("creditsButton").style.width = "125px";
-            document.getElementById("creditsButton").style.left =  "770px";
+            document.getElementById("creditsButton").style.width = "8.681%";
+            document.getElementById("creditsButton").style.left =  "62%";
             document.getElementById("nav").style.height =  "110px";
-            document.getElementById("locationButton").style.display = "block";
             document.getElementById("creditsButton").style.display = "block";
-            document.getElementById("preferencesButton").style.width = "125px";
-            document.getElementById("preferencesButton").style.left =  "620px";
+            document.getElementById("preferencesButton").style.width = "8.681%";
+            document.getElementById("preferencesButton").style.left =  "50%";
             document.getElementById("preferencesMenu").style.display = "None";
         }
     });
@@ -305,10 +305,12 @@ function updatePreferenceText() {
     document.getElementById("favTempText").textContent = "(" + document.getElementById("favTemp").value + "°F)"
     document.getElementById("favWeatherText").textContent = "(" + document.getElementById("favWeather").value + "%)"
     document.getElementById("favDifTempText").textContent = "(" + document.getElementById("favDifTemp").value + "%)"
-    document.getElementById("favTempImportanceText").textContent = "(" + document.getElementById("favTempImportance").value + "%)"
-    document.getElementById("favWeatherImportanceText").textContent = "(" + document.getElementById("favWeatherImportance").value + "%)"
-    document.getElementById("favDifTempImportanceText").textContent = "(" + document.getElementById("favDifTempImportance").value + "%)"
 
-    //TO-DO: Backend
+    //For these add up everything for it does not need to be done everytime to get precent
+    total = parseInt(document.getElementById("favTempImportance").value) + parseInt(document.getElementById("favWeatherImportance").value) + parseInt(document.getElementById("favDifTempImportance").value);
+    document.getElementById("favTempImportanceText").textContent = "(" + parseInt((parseInt(document.getElementById("favTempImportance").value)/total)*100) + "%)"
+    document.getElementById("favWeatherImportanceText").textContent = "(" + parseInt((parseInt(document.getElementById("favWeatherImportance").value)/total)*100) + "%)"
+    document.getElementById("favDifTempImportanceText").textContent = "(" + parseInt((parseInt(document.getElementById("favDifTempImportance").value)/total)*100) + "%)"
+
 }
 </script>
