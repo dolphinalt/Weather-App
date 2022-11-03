@@ -9,6 +9,7 @@ body {
     background-repeat: no-repeat;
     background-size: 106%;
     background-color:rgb(98, 98, 98);
+    user-select: none;
 }
 
 @font-face {
