@@ -21,7 +21,7 @@
             document.body.style.transform = "scale(" + percent + "%)"
         }
     </script>
-    <body style="scale: 100%;" onload='main("San,Diego,USA")'>
+    <body style="scale: 100%;" onload='main("San,Diego,USA")' id="body">
         <div style="scale: 100vw">
             <div style="position:absolute;width:100%;height:300px;z-index:1;">
                 <div class="nav" style="height: 110px;" id="nav">
@@ -165,20 +165,24 @@
     open = false;
     button.addEventListener("click", function(event) {
         main("San,Diego,USA")
+        document.getElementById("body").style["background-image"] = 'url("./assets/San,Diego,USA.png")';
     })
     var button = document.getElementById("WashingtonDCUSA");
     open = false;
     button.addEventListener("click", function(event) {
         main("Washington,DC,USA")
+        document.getElementById("body").style["background-image"] = 'url("./assets/Washington,DC,USA.png")';
     })
     var button = document.getElementById("NewYorkUSA");
     open = false;
     button.addEventListener("click", function(event) {
         main("New,York,New,York,USA")
+        document.getElementById("body").style["background-image"] = 'url("./assets/New,York,New,York,USA.png")';
     })
     var button = document.getElementById("SingaporeSingapore");
     open = false;
     button.addEventListener("click", function(event) {
         main("Singapore,Singapore")
+        document.getElementById("body").style["background-image"] = 'url("./assets/Singapore,Singapore.png")';
     })
 </script>

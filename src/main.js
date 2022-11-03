@@ -28,9 +28,15 @@ function main(wantedLocation) {
         // console.log(weatherData.locations.Washington,DC,USA.values.conditions)
         // today
         var place = wantedLocation
-        var locationNoComma = place.replace(",", ' ');
-        var locationSplit = locationNoComma.split(",");
-        var locationDisplay = locationSplit[0];
+        var ifTesting = place.split(",");
+        if (ifTesting[0] == ifTesting[1]) {
+            var locationSplit = place.split(",");
+            var locationDisplay = locationSplit[0];
+        } else {
+            var locationNoComma = place.replace(",", ' ');
+            var locationSplit = locationNoComma.split(",");
+            var locationDisplay = locationSplit[0];
+        }
         var locationDisplayFinal = locationDisplay.toUpperCase()
         var date0 = weatherData["locations"][place]["values"][0]["datetimeStr"]
         var temp0 = weatherData["locations"][place]["values"][0]["temp"]
